@@ -31,19 +31,21 @@ One of the opportunities I see in the portal layer is around how that data reach
 
 **Ops teams** are the execution layer — the ones actually configuring campaigns, making mid-flight adjustments, and managing exceptions. My assumption is that like most ops teams in this type of platform, a lot of their work is reactive: discovering issues through data diving rather than being surfaced to them proactively.
 
-**The thesis behind this prototype:** Give AMs the data and insights they need without requiring them to dig for it. Give ops a structured, prioritized workflow instead of a reactive discovery process. Both problems have the same root cause — the platform has the data, but it doesn't surface it to the right person at the right moment with the right recommended action.
+**The thesis behind this prototype:** Give AMs the data and insights they need without requiring them to dig for it. Give Ops a structured, prioritized workflow instead of a reactive discovery process. Both problems have the same root cause — the platform has the data, but it doesn't surface it to the right person at the right moment with the right recommended action.
 
 ---
 
 ## The three screens
 
-The portal uses a role switcher — the same three screens serve both AMs and Ops, with the content adapting based on who's logged in.
+The same three screens serve both AMs and Ops. The view is identical regardless of role — the only thing that changes is which portfolio of accounts is shown, based on who's logged in.
 
 ### Screen 1 — Portfolio
 
-The home screen, shaped by role. For an AM, it shows a portfolio of brand accounts with campaign health indicators, budget pacing, and an AI insights panel surfacing opportunities ranked by urgency — budget alerts, retailer efficiency signals, renewal prompts — each with a specific, quantified recommendation attached. For an Ops user, the same screen surfaces an action queue: a prioritized list of issues that need resolution — campaigns not redeeming, retailer feed delays, configuration errors — rather than a passive monitoring view.
+The home screen. A portfolio of brand accounts with campaign health indicators, budget pacing, and an AI insights panel surfacing opportunities and issues ranked by urgency — budget alerts, retailer efficiency signals, renewal prompts — each with a specific, quantified recommendation attached.
 
-**Design principle:** Same underlying data, role-appropriate lens. The portal should know what each user needs to do with the information, not just show it.
+Both AMs and Ops see this same view. The suggested actions shown here — budget shifts, configuration fixes, renewals — would in practice be carried out by Ops. This prototype focuses on the intelligence and surfacing layer; the screens where Ops actually executes those actions are out of scope for this version.
+
+**Design principle:** Bring problems and opportunities forward, ranked by urgency, with a recommended action attached — so nobody has to go looking.
 
 ---
 
@@ -72,7 +74,7 @@ The full in-flight performance view for a single campaign. The AI recommendation
 | Actionability over data display | Every metric has a "so what" — no numbers without context or recommendation |
 | Proactive over reactive surfacing | AI insights panel and ops queue surface issues before users search for them |
 | Insight hierarchy | Urgent → Attention → Opportunity → Informational, always in that order |
-| Role-appropriate views | AM sees portfolio health; Ops sees a workflow queue; same underlying data |
+| Shared view, scoped by user | AMs and Ops see the same screens — the portfolio is scoped to the logged-in user's accounts |
 | AI as collaborator | Recommendations are specific, quantified, dismissible — never irreversible without confirmation |
 | Reduce handoffs | Generate Recap, Shift Budget, Flag for Ops — all on the same screen as the insight |
 
