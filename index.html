@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPN Campaign Intelligence Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     TOP BAR
+════════════════════════════════════════════════════════ -->
+<header class="topbar">
+  <div class="topbar-logo">
+    <!-- IPN wordmark (SVG text-based) -->
+    <svg viewBox="0 0 210 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="20" font-family="Inter,sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">IPN</text>
+      <rect x="32" y="4" width="2" height="20" rx="1" fill="#40D1F5"/>
+      <text x="38" y="20" font-family="Inter,sans-serif" font-weight="500" font-size="13" fill="#9CA3AF">Campaign Intelligence</text>
+    </svg>
+  </div>
+
+  <div class="topbar-center">
+    <div class="search-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" placeholder="Search campaigns, brands, retailers…">
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    <button class="notif-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      </svg>
+      <span class="notif-badge">5</span>
+    </button>
+    <div class="user-chip">
+      <div class="user-avatar">JM</div>
+      <div>
+        <div class="user-name">Jordan Mills</div>
+        <div style="font-size:11px;color:#9CA3AF;">Account Manager</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════════════════════ -->
+<aside class="sidebar">
+
+  <div class="sidebar-divider"></div>
+
+  <div class="nav-section-label">Workspace</div>
+
+  <div class="nav-item active" onclick="showScreen('am-portfolio')" data-screen="am-portfolio">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+      <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+    </svg>
+    My Portfolio
+  </div>
+
+
+
+  <div class="sidebar-bottom">
+    <div class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+      </svg>
+      Settings
+    </div>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN 1 — AM PORTFOLIO
+════════════════════════════════════════════════════════ -->
+<main class="main">
+<div class="screen active" id="screen-am-portfolio">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <h1 class="page-title">My Portfolio</h1>
+        <p class="page-sub">26 active accounts · Week of April 11, 2026</p>
+      </div>
+      <button class="btn btn-primary" style="font-size:13px;padding:9px 18px;">
+        + New Campaign
+      </button>
+    </div>
+  </div>
+
+  <!-- Summary Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-label">Active Campaigns</div>
+      <div class="stat-value">34</div>
+      <div class="stat-delta neutral">8 launching this month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Budget Managed</div>
+      <div class="stat-value">$9.2M</div>
+      <div class="stat-delta up">↑ $1.4M vs last quarter</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg Blended CPUM</div>
+      <div class="stat-value">$2.09</div>
+      <div class="stat-delta up">↓ $0.22 vs last month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg Incremental Lift</div>
+      <div class="stat-value">+16%</div>
+      <div class="stat-delta up">↑ 2pts vs last quarter</div>
+    </div>
+  </div>
+
+  <!-- ── Needs Attention ─────────────────────────────────── -->
+  <div class="section-header" style="margin-bottom:12px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="section-title">Needs Attention</div>
+      <span style="background:#FEE2E2;color:#B91C1C;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;">4 items</span>
+    </div>
+    <span style="font-size:12px;color:#9CA3AF;">Updated 4 min ago</span>
+  </div>
+
+  <div class="attention-list">
+
+    <div class="attention-item urgent">
+      <div style="display:flex;align-items:flex-start;gap:12px;flex:1;">
+        <div class="attention-brand-chip" style="background:#1C1F24;">LD</div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span style="font-size:13px;font-weight:700;color:var(--black);">Liquid Death</span>
+            <span style="font-size:11px;color:#9CA3AF;">LiveLift Q2 Pilot</span>
+            <span style="background:#FEE2E2;color:#B91C1C;font-size:10px;font-weight:700;padding:1px 7px;border-radius:100px;letter-spacing:0.04em;">URGENT</span>
+          </div>
+          <div style="font-size:13px;color:var(--gray-mid);line-height:1.45;">Budget burning at <strong>$15.7K/day</strong> — 3.9× the ideal rate. Exhausts <strong>~Apr 16</strong>, 34 days before campaign end.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button class="btn btn-primary" style="font-size:12px;padding:6px 14px;">Adjust Daily Cap</button>
+        <button class="btn btn-secondary" style="font-size:12px;padding:6px 14px;" onclick="showBrand('liquid-death')">View Brand</button>
+      </div>
+    </div>
+
+    <div class="attention-item urgent">
+      <div style="display:flex;align-items:flex-start;gap:12px;flex:1;">
+        <div class="attention-brand-chip" style="background:#CC0000;">GM</div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span style="font-size:13px;font-weight:700;color:var(--black);">General Mills</span>
+            <span style="font-size:11px;color:#9CA3AF;">Cereal Trial Drive</span>
+            <span style="background:#FEE2E2;color:#B91C1C;font-size:10px;font-weight:700;padding:1px 7px;border-radius:100px;letter-spacing:0.04em;">URGENT</span>
+          </div>
+          <div style="font-size:13px;color:var(--gray-mid);line-height:1.45;">Dollar General feed delayed <strong>4h 12m</strong>. ~3,200 redemptions pending verification. CPUM data incomplete until resolved.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button class="btn btn-primary" style="font-size:12px;padding:6px 14px;">Notify Ops</button>
+        <button class="btn btn-secondary" style="font-size:12px;padding:6px 14px;" onclick="showBrand('general-mills')">View Brand</button>
+      </div>
+    </div>
+
+    <div class="attention-item attention">
+      <div style="display:flex;align-items:flex-start;gap:12px;flex:1;">
+        <div class="attention-brand-chip" style="background:#CC0052;">KC</div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span style="font-size:13px;font-weight:700;color:var(--black);">Kimberly-Clark</span>
+            <span style="font-size:11px;color:#9CA3AF;">Kleenex Allergy Season</span>
+            <span style="background:#FEF9C3;color:#A16207;font-size:10px;font-weight:700;padding:1px 7px;border-radius:100px;letter-spacing:0.04em;">ATTENTION</span>
+          </div>
+          <div style="font-size:13px;color:var(--gray-mid);line-height:1.45;">Campaign ends <strong>Apr 15</strong> — 4 days. Budget 91% used. No renewal brief on file.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button class="btn btn-primary" style="font-size:12px;padding:6px 14px;">Draft Renewal</button>
+        <button class="btn btn-secondary" style="font-size:12px;padding:6px 14px;" onclick="showBrand('kimberly-clark')">View Brand</button>
+      </div>
+    </div>
+
+    <div class="attention-item attention">
+      <div style="display:flex;align-items:flex-start;gap:12px;flex:1;">
+        <div class="attention-brand-chip" style="background:#004B93;">PC</div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <span style="font-size:13px;font-weight:700;color:var(--black);">PepsiCo</span>
+            <span style="font-size:11px;color:#9CA3AF;">Summer Refresh Campaign</span>
+            <span style="background:#FEF9C3;color:#A16207;font-size:10px;font-weight:700;padding:1px 7px;border-radius:100px;letter-spacing:0.04em;">ATTENTION</span>
+          </div>
+          <div style="font-size:13px;color:var(--gray-mid);line-height:1.45;">Budget at <strong>84%</strong> with 34 days remaining. At current pace, exhausts ~May 6 — 9 days before flight ends.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button class="btn btn-primary" style="font-size:12px;padding:6px 14px;">Adjust Budget</button>
+        <button class="btn btn-secondary" style="font-size:12px;padding:6px 14px;" onclick="showBrand('pepsico')">View Brand</button>
+      </div>
+    </div>
+
+  </div><!-- /attention-list -->
+
+  <!-- ── AI Opportunities ──────────────────────────────────── -->
+  <div class="section-header" style="margin-bottom:12px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="ai-dot"></div>
+      <div class="section-title">AI-Powered Opportunities</div>
+      <span style="background:#E0F8FF;color:#0369A1;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;">3 recommendations</span>
+    </div>
+    <span style="font-size:12px;color:#9CA3AF;">Based on live performance data · Updated 12 min ago</span>
+  </div>
+
+  <div class="opportunity-grid">
+
+    <!-- Opp 1: Budget Shift -->
+    <div class="opportunity-card">
+      <div class="opp-header">
+        <div class="opp-badge"><div class="opp-badge-dot"></div>Budget Reallocation</div>
+        <span class="opp-time">1h ago</span>
+      </div>
+      <div class="opp-brand">Coca-Cola — Sparkling Water Launch</div>
+      <div class="opp-text">Walmart CPUM (<strong>$1.82</strong>) is <strong>44% more efficient</strong> than Target ($3.24). Shifting $40K from Target to Walmart projected to improve blended CPUM by ~22%.</div>
+      <div class="opp-impact">↓ ~22% blended CPUM if actioned</div>
+      <div class="opp-actions">
+        <button class="insight-btn primary">Shift $40K</button>
+        <button class="insight-btn ghost">Review Details</button>
+      </div>
+    </div>
+
+    <!-- Opp 2: Flight Extension -->
+    <div class="opportunity-card">
+      <div class="opp-header">
+        <div class="opp-badge"><div class="opp-badge-dot"></div>Flight Extension</div>
+        <span class="opp-time">2h ago</span>
+      </div>
+      <div class="opp-brand">Procter & Gamble — Summer Essentials</div>
+      <div class="opp-text">Campaign at <strong>$2.08 CPUM</strong> — 26% below category benchmark. 18 days remain with <strong>31% budget unused</strong>. Extending 14 days would move ~12K additional incremental units.</div>
+      <div class="opp-impact">+~12K incremental units with extension</div>
+      <div class="opp-actions">
+        <button class="insight-btn primary">Extend Flight</button>
+        <button class="insight-btn ghost">Dismiss</button>
+      </div>
+    </div>
+
+    <!-- Opp 3: New Campaign Prompt -->
+    <div class="opportunity-card">
+      <div class="opp-header">
+        <div class="opp-badge"><div class="opp-badge-dot"></div>New Campaign Signal</div>
+        <span class="opp-time">3h ago</span>
+      </div>
+      <div class="opp-brand">Kellogg's — Post-May Gap</div>
+      <div class="opp-text">Breakfast category seeing <strong>+28% Q2 lift</strong> vs Q1 IPN-wide. Kellogg's has no campaigns scheduled after May 5. Based on renewal history, high probability of Q2 extension interest.</div>
+      <div class="opp-impact">Breakfast category at peak seasonal demand</div>
+      <div class="opp-actions">
+        <button class="insight-btn primary">Draft Proposal</button>
+        <button class="insight-btn ghost">Dismiss</button>
+      </div>
+    </div>
+
+  </div><!-- /opportunity-grid -->
+
+  <!-- ── Brand Accounts ────────────────────────────────────── -->
+  <div class="section-header" style="margin-bottom:16px;">
+    <div class="section-title">Brand Accounts</div>
+    <div class="filter-tabs" id="portfolioFilterTabs">
+      <div class="filter-tab active" onclick="filterPortfolio('all', this)">All</div>
+      <div class="filter-tab" onclick="filterPortfolio('healthy', this)">Healthy</div>
+      <div class="filter-tab" onclick="filterPortfolio('attention', this)">Needs Attention</div>
+      <div class="filter-tab" onclick="filterPortfolio('ending-soon', this)">Ending Soon</div>
+    </div>
+  </div>
+
+  <div class="campaigns-grid" id="portfolioGrid">
+
+    <!-- Card 1: Kraft Heinz — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy" onclick="showBrand('kraft-heinz')">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#1B4FCC;">KH</div>
+            <div>
+              <div class="brand-name">Kraft Heinz</div>
+              <div class="campaign-name">1 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.92</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.38</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+18%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header">
+            <span>Active Budget</span>
+            <span>$306K / $450K · 68%</span>
+          </div>
+          <div class="budget-bar-track">
+            <div class="budget-bar-fill normal" style="width:68%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 15 – Apr 28 · <span>17 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation();showBrand('kraft-heinz')">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: PepsiCo — Attention (pacing) -->
+    <div class="campaign-card attention" data-status="attention" onclick="showBrand('pepsico')">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#004B93;">PC</div>
+            <div>
+              <div class="brand-name">PepsiCo</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Attention</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.14</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.41</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+22%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header">
+            <span>Active Budget · <strong style="color:var(--amber);">Exhausts 9 days early</strong></span>
+            <span>$748K / $890K · 84%</span>
+          </div>
+          <div class="budget-bar-track">
+            <div class="budget-bar-fill warning" style="width:84%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 1 – May 15 · <span>34 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Adjust Budget</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation();showBrand('pepsico')">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: General Mills — Urgent -->
+    <div class="campaign-card urgent" data-status="urgent" onclick="showBrand('general-mills')">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#CC0000;">GM</div>
+            <div>
+              <div class="brand-name">General Mills</div>
+              <div class="campaign-name">2 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge urgent"><div class="dot"></div>Urgent</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value red">$3.80</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value red">$0.72</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+8%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header">
+            <span>Active Budget · <strong style="color:var(--red);">DG feed delayed 4h 12m</strong></span>
+            <span>$131K / $320K · 41%</span>
+          </div>
+          <div class="budget-bar-track">
+            <div class="budget-bar-fill critical" style="width:41%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 22 – May 1 · <span>20 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Notify Ops</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation();showBrand('general-mills')">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Liquid Death — Outperforming -->
+    <div class="campaign-card healthy" data-status="healthy" onclick="showBrand('liquid-death')">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#1C1F24;">LD</div>
+            <div>
+              <div class="brand-name">Liquid Death</div>
+              <div class="campaign-name">2 live · 5 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Outperforming</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.76</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.31</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+19%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header">
+            <span>Active Budget</span>
+            <span>$161K / $300K · 54%</span>
+          </div>
+          <div class="budget-bar-track">
+            <div class="budget-bar-fill normal" style="width:54%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 5 – May 20 · <span>39 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation();showBrand('liquid-death')">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Kimberly-Clark — Ending Soon -->
+    <div class="campaign-card attention" data-status="ending-soon" onclick="showBrand('kimberly-clark')">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#CC0052;">KC</div>
+            <div>
+              <div class="brand-name">Kimberly-Clark</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Ending Soon</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.31</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.44</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+15%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header">
+            <span>Active Budget · <strong style="color:var(--amber);">No renewal brief on file</strong></span>
+            <span>$510K / $560K · 91%</span>
+          </div>
+          <div class="budget-bar-track">
+            <div class="budget-bar-fill warning" style="width:91%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Feb 28 – Apr 15 · <span style="color:var(--amber);font-weight:600;">4 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Draft Renewal</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation();showBrand('kimberly-clark')">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Hain Celestial — In Setup -->
+    <div class="campaign-card setup" data-status="setup" onclick="showBrand('hain-celestial')">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#5B8E3E;">HC</div>
+            <div>
+              <div class="brand-name">Hain Celestial</div>
+              <div class="campaign-name">0 live · 2 in setup</div>
+            </div>
+          </div>
+          <div class="status-badge setup"><div class="dot"></div>In Setup</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Planned Budget</div>
+            <div class="metric-value">$240K</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Launch Date</div>
+            <div class="metric-value">Apr 21</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Ops Items</div>
+            <div class="metric-value" style="color:var(--amber);">2 open</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header">
+            <span>Setup Progress · <strong style="color:var(--amber);">2 ops items pending</strong></span>
+            <span>4 / 6 steps complete</span>
+          </div>
+          <div class="budget-bar-track">
+            <div class="budget-bar-fill normal" style="width:67%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 21 – Jun 14 · <span>55 day flight</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Review Setup</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation();showBrand('hain-celestial')">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Unilever — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#1A5276;">UL</div>
+            <div>
+              <div class="brand-name">Unilever</div>
+              <div class="campaign-name">2 live · 4 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.85</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.36</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+16%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$238K / $340K · 70%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:70%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 20 – May 3 · <span>22 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Procter & Gamble — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#003087;">PG</div>
+            <div>
+              <div class="brand-name">Procter &amp; Gamble</div>
+              <div class="campaign-name">3 live · 5 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.08</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.42</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+14%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$341K / $620K · 55%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:55%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 1 – May 31 · <span>50 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Coca-Cola — Attention -->
+    <div class="campaign-card attention" data-status="attention">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#E8002D;">CC</div>
+            <div>
+              <div class="brand-name">Coca-Cola</div>
+              <div class="campaign-name">2 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Attention</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.65</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.53</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+11%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget · <strong style="color:var(--amber);">Retailer mix inefficiency</strong></span><span>$374K / $480K · 78%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill warning" style="width:78%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 15 – Apr 30 · <span>19 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Shift Budget</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 10: Nestlé — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#952B30;">NE</div>
+            <div>
+              <div class="brand-name">Nestlé</div>
+              <div class="campaign-name">2 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.95</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.39</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+20%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$180K / $290K · 62%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:62%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 28 – May 10 · <span>29 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 11: Conagra Brands — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#205493;">CA</div>
+            <div>
+              <div class="brand-name">Conagra Brands</div>
+              <div class="campaign-name">2 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.78</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.34</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+18%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$106K / $220K · 48%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:48%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 5 – May 25 · <span>44 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 12: Mondelez — In Setup -->
+    <div class="campaign-card setup" data-status="setup">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#6B1414;">MI</div>
+            <div>
+              <div class="brand-name">Mondelez</div>
+              <div class="campaign-name">0 live · 2 in setup</div>
+            </div>
+          </div>
+          <div class="status-badge setup"><div class="dot"></div>In Setup</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Planned Budget</div>
+            <div class="metric-value">$380K</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Launch Date</div>
+            <div class="metric-value">May 1</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Ops Items</div>
+            <div class="metric-value" style="color:var(--green);">All clear</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Setup Progress</span><span>5 / 6 steps complete</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:83%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">May 1 – Jun 30 · <span>61 day flight</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Review Setup</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 13: Campbell's — Urgent -->
+    <div class="campaign-card urgent" data-status="urgent">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#CC0000;">CS</div>
+            <div>
+              <div class="brand-name">Campbell's</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge urgent"><div class="dot"></div>Urgent</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value red">$3.45</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value red">$0.68</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+7%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget · <strong style="color:var(--red);">Instacart feed stalled 6h</strong></span><span>$67K / $190K · 35%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill critical" style="width:35%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 3 – May 8 · <span>27 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Notify Ops</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 14: Tyson Foods — Attention (ending soon) -->
+    <div class="campaign-card attention" data-status="ending-soon">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#C0392B;">TF</div>
+            <div>
+              <div class="brand-name">Tyson Foods</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Ending Soon</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.41</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.47</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+13%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget · <strong style="color:var(--amber);">No renewal brief on file</strong></span><span>$320K / $390K · 82%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill warning" style="width:82%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Feb 14 – Apr 18 · <span style="color:var(--amber);font-weight:600;">7 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Draft Renewal</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 15: Kellogg's — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#C0392B;">KG</div>
+            <div>
+              <div class="brand-name">Kellogg's</div>
+              <div class="campaign-name">2 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.88</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.36</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+22%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$180K / $310K · 58%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:58%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 2 – May 17 · <span>36 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 16: Johnson & Johnson — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#CC0000;">JJ</div>
+            <div>
+              <div class="brand-name">J&amp;J Consumer</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.22</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.43</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+17%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$166K / $260K · 64%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:64%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 25 – May 5 · <span>24 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 17: Colgate-Palmolive — Attention (ending) -->
+    <div class="campaign-card attention" data-status="ending-soon">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#E63946;">CL</div>
+            <div>
+              <div class="brand-name">Colgate-Palmolive</div>
+              <div class="campaign-name">1 live · 1 total campaign</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Ending Soon</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.89</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.55</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+10%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$128K / $145K · 88%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill warning" style="width:88%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 1 – Apr 17 · <span style="color:var(--amber);font-weight:600;">6 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Draft Renewal</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 18: Clorox — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#004F9E;">CX</div>
+            <div>
+              <div class="brand-name">Clorox</div>
+              <div class="campaign-name">2 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.15</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.41</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+19%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$146K / $280K · 52%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:52%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 7 – May 22 · <span>41 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 19: Church & Dwight — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#F77E0B;">CD</div>
+            <div>
+              <div class="brand-name">Church &amp; Dwight</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.99</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.38</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+15%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$75K / $175K · 43%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:43%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 10 – Jun 1 · <span>51 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 20: Reckitt — Attention -->
+    <div class="campaign-card attention" data-status="attention">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#C8102E;">RB</div>
+            <div>
+              <div class="brand-name">Reckitt</div>
+              <div class="campaign-name">2 live · 3 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Attention</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.52</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.49</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+12%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget · <strong style="color:var(--amber);">Pacing 18% above forecast</strong></span><span>$243K / $320K · 76%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill warning" style="width:76%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 28 – May 12 · <span>31 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Adjust Budget</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 21: SC Johnson — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#0A5F38;">SJ</div>
+            <div>
+              <div class="brand-name">SC Johnson</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$2.01</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.39</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+16%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$120K / $210K · 57%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:57%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 1 – May 20 · <span>39 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 22: Hormel Foods — In Setup -->
+    <div class="campaign-card setup" data-status="setup">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#7B241C;">HF</div>
+            <div>
+              <div class="brand-name">Hormel Foods</div>
+              <div class="campaign-name">0 live · 1 in setup</div>
+            </div>
+          </div>
+          <div class="status-badge setup"><div class="dot"></div>In Setup</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Planned Budget</div>
+            <div class="metric-value">$160K</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Launch Date</div>
+            <div class="metric-value">Apr 28</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Ops Items</div>
+            <div class="metric-value" style="color:var(--amber);">3 open</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Setup Progress</span><span>3 / 6 steps complete</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:50%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 28 – Jun 11 · <span>45 day flight</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Review Setup</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 23: Del Monte Foods — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#2E8B57;">DM</div>
+            <div>
+              <div class="brand-name">Del Monte Foods</div>
+              <div class="campaign-name">1 live · 1 total campaign</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value green">$1.75</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value green">$0.33</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+21%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$94K / $140K · 67%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:67%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 4 – May 14 · <span>33 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 24: Henkel — Attention -->
+    <div class="campaign-card attention" data-status="attention">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#CF2027;">HK</div>
+            <div>
+              <div class="brand-name">Henkel</div>
+              <div class="campaign-name">1 live · 2 total campaigns</div>
+            </div>
+          </div>
+          <div class="status-badge attention"><div class="dot"></div>Attention</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.78</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.54</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value">+9%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget · <strong style="color:var(--amber);">Low offer redemption rate</strong></span><span>$180K / $250K · 72%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill warning" style="width:72%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Mar 22 – May 1 · <span>20 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Review Offer</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 25: Energizer — Healthy -->
+    <div class="campaign-card healthy" data-status="healthy">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#F77F00;">EG</div>
+            <div>
+              <div class="brand-name">Energizer</div>
+              <div class="campaign-name">1 live · 1 total campaign</div>
+            </div>
+          </div>
+          <div class="status-badge healthy"><div class="dot"></div>Healthy</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Avg CPUM</div>
+            <div class="metric-value">$2.34</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Avg CPID</div>
+            <div class="metric-value">$0.46</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Incr. Lift</div>
+            <div class="metric-value green">+18%</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Active Budget</span><span>$53K / $120K · 44%</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:44%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 9 – Jun 3 · <span>53 days left</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Generate Recap</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 26: Spectrum Brands — In Setup -->
+    <div class="campaign-card setup" data-status="setup">
+      <div class="card-top">
+        <div class="card-header">
+          <div class="brand-info">
+            <div class="brand-avatar" style="background:#1E4D8C;">SB</div>
+            <div>
+              <div class="brand-name">Spectrum Brands</div>
+              <div class="campaign-name">0 live · 1 in setup</div>
+            </div>
+          </div>
+          <div class="status-badge setup"><div class="dot"></div>In Setup</div>
+        </div>
+        <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-item">
+            <div class="metric-label">Planned Budget</div>
+            <div class="metric-value">$195K</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Launch Date</div>
+            <div class="metric-value">Apr 25</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Ops Items</div>
+            <div class="metric-value" style="color:var(--green);">All clear</div>
+          </div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar-header"><span>Setup Progress</span><span>6 / 6 steps complete</span></div>
+          <div class="budget-bar-track"><div class="budget-bar-fill normal" style="width:100%"></div></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="flight-info">Apr 25 – Jun 20 · <span>56 day flight</span></div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="event.stopPropagation()">Review Setup</button>
+          <button class="btn btn-primary" onclick="event.stopPropagation()">View Brand →</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /campaigns-grid -->
+</div><!-- /screen-am-portfolio -->
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN 1B — BRAND DETAIL
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-brand-detail">
+
+  <div class="breadcrumb">
+    <a onclick="showScreen('am-portfolio')">My Portfolio</a>
+    <span>›</span>
+    <span id="bd-name"></span>
+  </div>
+
+  <div id="bd-hero"></div>
+
+  <div id="bd-chart-section"></div>
+
+  <div id="bd-opportunities"></div>
+
+  <div id="bd-list-header"></div>
+
+  <div id="bd-list"></div>
+
+</div><!-- /screen-brand-detail -->
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN 2 — OPS ACTION QUEUE
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-ops-queue">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <h1 class="page-title">Ops Action Queue</h1>
+        <p class="page-sub">7 items · 3 urgent · Last refreshed 2 min ago</p>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button class="btn btn-secondary" style="font-size:13px;padding:9px 18px;">
+          ↓ Export Log
+        </button>
+        <button class="btn btn-primary" style="font-size:13px;padding:9px 18px;">
+          + Flag Issue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- System Health Bar -->
+  <div class="health-bar">
+    <div class="health-bar-label">Publisher Feeds</div>
+    <div class="health-feeds">
+      <div class="feed-pill ok">
+        <div class="feed-dot"></div>Walmart
+      </div>
+      <div class="feed-pill degraded">
+        <div class="feed-dot"></div>Dollar General · 4h delay
+      </div>
+      <div class="feed-pill ok">
+        <div class="feed-dot"></div>Instacart
+      </div>
+      <div class="feed-pill ok">
+        <div class="feed-dot"></div>DoorDash
+      </div>
+      <div class="feed-pill ok">
+        <div class="feed-dot"></div>Family Dollar
+      </div>
+      <div class="feed-pill ok">
+        <div class="feed-dot"></div>Uber Eats
+      </div>
+      <div class="feed-pill pending">
+        <div class="feed-dot"></div>Schnucks · QA Pending
+      </div>
+    </div>
+    <div class="health-last-check">Checked 2m ago</div>
+  </div>
+
+  <!-- Ops Stats -->
+  <div class="ops-stats">
+    <div class="ops-stat">
+      <div class="ops-stat-icon red">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <div>
+        <div class="ops-stat-label">Urgent</div>
+        <div class="ops-stat-value">3</div>
+      </div>
+    </div>
+    <div class="ops-stat">
+      <div class="ops-stat-icon amber">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <div>
+        <div class="ops-stat-label">Warnings</div>
+        <div class="ops-stat-value">2</div>
+      </div>
+    </div>
+    <div class="ops-stat">
+      <div class="ops-stat-icon blue">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div>
+        <div class="ops-stat-label">In Review</div>
+        <div class="ops-stat-value">1</div>
+      </div>
+    </div>
+    <div class="ops-stat">
+      <div class="ops-stat-icon green">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <div>
+        <div class="ops-stat-label">Resolved Today</div>
+        <div class="ops-stat-value">1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Queue Filter Row -->
+  <div class="queue-filter-row">
+    <div class="queue-tabs">
+      <div class="queue-tab all active" onclick="filterQueue('all',this)">
+        All <span class="tab-count" style="background:rgba(0,0,0,0.1);">7</span>
+      </div>
+      <div class="queue-tab urgent" onclick="filterQueue('urgent',this)">
+        Urgent <span class="tab-count" style="background:#FEE2E2;color:#B91C1C;">3</span>
+      </div>
+      <div class="queue-tab inreview" onclick="filterQueue('inreview',this)">
+        In Review <span class="tab-count" style="background:#EFF6FF;color:#1D4ED8;">1</span>
+      </div>
+      <div class="queue-tab resolved" onclick="filterQueue('resolved',this)">
+        Resolved <span class="tab-count" style="background:#DCFCE7;color:#15803D;">1</span>
+      </div>
+    </div>
+    <div class="queue-sort">
+      Sort by:
+      <select>
+        <option>Priority</option>
+        <option>Time Flagged</option>
+        <option>Campaign</option>
+        <option>Brand</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Queue List -->
+  <div class="queue-list">
+
+    <!-- Item 1: URGENT — Feed Delay -->
+    <div class="queue-item" data-priority="urgent">
+      <div class="queue-priority-bar urgent"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon feed">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 6c0 0 5-2 11-2s11 2 11 2"/><path d="M1 12c0 0 5-2 11-2s11 2 11 2"/>
+            <path d="M1 18c0 0 5-2 11-2s11 2 11 2"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge urgent">Urgent</span>
+            <span class="queue-issue-type">Publisher Feed · Dollar General</span>
+            <span class="queue-time">4h 12m ago</span>
+          </div>
+          <div class="queue-headline">
+            <a onclick="showScreen('campaign-detail')">General Mills — Cereal Trial Drive</a>
+            &nbsp;·&nbsp;<span style="font-size:12px;color:#9CA3AF;font-weight:400;">Campaign ID #IPN-4821</span>
+          </div>
+          <div class="queue-desc">Dollar General transaction feed delayed <strong>4 hours 12 minutes</strong>. Approximately <strong>3,200 redemptions</strong> are pending verification. CPUM and incremental lift calculations are impacted until the feed resumes. AM has been notified and is monitoring client impact.</div>
+          <div class="queue-suggestion">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Suggested fix: Trigger manual feed pull from Dollar General SFTP. If unresolved in 30 min, escalate to Publisher Integration team and hold adjudication batch until feed catches up.
+          </div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn primary">Trigger Feed Pull</button>
+        <button class="queue-action-btn secondary">Escalate</button>
+      </div>
+    </div>
+
+    <!-- Item 2: URGENT — Adjudication Error -->
+    <div class="queue-item" data-priority="urgent">
+      <div class="queue-priority-bar urgent"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon adjudication">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge urgent">Urgent</span>
+            <span class="queue-issue-type">Adjudication Error · Walmart</span>
+            <span class="queue-time">1h 38m ago</span>
+          </div>
+          <div class="queue-headline">
+            <a onclick="showScreen('campaign-detail')">PepsiCo — Summer Refresh Campaign</a>
+            &nbsp;·&nbsp;<span style="font-size:12px;color:#9CA3AF;font-weight:400;">Campaign ID #IPN-4796</span>
+          </div>
+          <div class="queue-desc"><strong>847 Walmart redemptions</strong> incorrectly flagged as duplicate submissions by the anti-stacking engine. Root cause: offer SKU overlap with a legacy Pepsi promotion that expired March 31. Consumers are correctly eligible — false positive classification.</div>
+          <div class="queue-suggestion">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Suggested fix: Override anti-stacking rule for SKUs 7823, 7824, 7831. Reprocess 847 flagged redemptions. Update legacy offer expiry reference in adjudication config to prevent recurrence.
+          </div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn primary">Override &amp; Reprocess</button>
+        <button class="queue-action-btn secondary">View Log</button>
+      </div>
+    </div>
+
+    <!-- Item 3: URGENT — Config Blocker -->
+    <div class="queue-item" data-priority="urgent">
+      <div class="queue-priority-bar urgent"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon config">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge urgent">Urgent</span>
+            <span class="queue-issue-type">Campaign Config · Launch Blocker</span>
+            <span class="queue-time">3h 5m ago</span>
+          </div>
+          <div class="queue-headline">
+            <a onclick="showScreen('campaign-detail')">Hain Celestial — Natural Foods Discovery</a>
+            &nbsp;·&nbsp;<span style="font-size:12px;color:#9CA3AF;font-weight:400;">Campaign ID #IPN-4855 · Launches Apr 21</span>
+          </div>
+          <div class="queue-desc">Instacart publisher targeting parameters are <strong>missing for 3 of 12 SKUs</strong> in the campaign configuration. Launch is blocked until all SKU-publisher mappings are complete. 10 days until scheduled launch — configuration window closing.</div>
+          <div class="queue-suggestion">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Suggested fix: Complete Instacart targeting for SKUs 9201, 9204, 9209. Reference Instacart Category Targeting Playbook v3 for Natural/Organic segment parameters. Assign to config team — needs &lt;2h effort.
+          </div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn primary">Complete Config</button>
+        <button class="queue-action-btn secondary">Assign</button>
+      </div>
+    </div>
+
+    <!-- Item 4: WARNING — Rule Conflict -->
+    <div class="queue-item" data-priority="warning">
+      <div class="queue-priority-bar warning"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon rules">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge warning">Warning</span>
+            <span class="queue-issue-type">Anti-Stacking Rule · Kroger Conflict</span>
+            <span class="queue-time">5h 44m ago</span>
+          </div>
+          <div class="queue-headline">
+            <a onclick="showScreen('campaign-detail')">Kimberly-Clark — Kleenex Allergy Season</a>
+            &nbsp;·&nbsp;<span style="font-size:12px;color:#9CA3AF;font-weight:400;">Campaign ID #IPN-4762</span>
+          </div>
+          <div class="queue-desc">Anti-stacking rule is blocking <strong>~140 daily redemptions</strong> at Kroger because the system detects overlap with a Kroger-funded tissue promotion running in parallel. Both promotions are legitimately stackable per the brand agreement — rule needs updating.</div>
+          <div class="queue-suggestion">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Suggested fix: Update anti-stacking exception list to allow co-occurrence of IPN offer #4762 with Kroger publisher promo #KR-8821. Verify stackability clause in Kimberly-Clark brand agreement Section 4.2 before overriding.
+          </div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn primary">Update Rules</button>
+        <button class="queue-action-btn secondary">View Agreement</button>
+      </div>
+    </div>
+
+    <!-- Item 5: WARNING — Budget Pacing -->
+    <div class="queue-item" data-priority="warning">
+      <div class="queue-priority-bar warning"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon budget">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge warning">Warning</span>
+            <span class="queue-issue-type">Budget Pacing · Walmart Allocation</span>
+            <span class="queue-time">6h 20m ago</span>
+          </div>
+          <div class="queue-headline">
+            <a onclick="showScreen('campaign-detail')">Liquid Death — LiveLift Q2 Pilot</a>
+            &nbsp;·&nbsp;<span style="font-size:12px;color:#9CA3AF;font-weight:400;">Campaign ID #IPN-4841</span>
+          </div>
+          <div class="queue-desc">Walmart allocation is at <strong>89% with 39 days remaining</strong> in the flight. At current velocity, Walmart budget exhausts in ~6 days. Campaign is outperforming (CPUM $1.42) — AM has flagged this as an opportunity to shift additional budget from Dollar General.</div>
+          <div class="queue-suggestion">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Suggested fix: Reallocate $25K from Dollar General allocation (CPUM $2.69) to Walmart (CPUM $1.42). Requires AM approval and brand confirmation. Draft reallocation request is ready for AM review.
+          </div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn primary">Draft Reallocation</button>
+        <button class="queue-action-btn secondary">Notify AM</button>
+      </div>
+    </div>
+
+    <!-- Item 6: IN REVIEW — Publisher QA -->
+    <div class="queue-item" data-priority="inreview">
+      <div class="queue-priority-bar inreview"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon qa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge inreview">In Review</span>
+            <span class="queue-issue-type">Publisher Onboarding · Schnucks Integration</span>
+            <span class="queue-time">Yesterday</span>
+          </div>
+          <div class="queue-headline">
+            <a onclick="showScreen('campaign-detail')">Kraft Heinz — Spring Condiments Promo</a>
+            &nbsp;·&nbsp;<span style="font-size:12px;color:#9CA3AF;font-weight:400;">Campaign ID #IPN-4821</span>
+          </div>
+          <div class="queue-desc">Schnucks publisher integration is in final QA. <strong>4 of 6 test scenarios passed</strong>. Two remaining: edge case receipt scanning with multi-item baskets and loyalty points co-redemption flow. QA sign-off required before Schnucks goes live for this campaign.</div>
+          <div class="queue-suggestion">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Next step: Run test scenarios #5 and #6 in staging environment. Estimated 90 min. Sign-off will unlock Schnucks distribution for ~400 additional store locations.
+          </div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn primary">View QA Checklist</button>
+        <button class="queue-action-btn secondary">Run Tests</button>
+      </div>
+    </div>
+
+    <!-- Item 7: RESOLVED -->
+    <div class="queue-item resolved" data-priority="resolved">
+      <div class="queue-priority-bar resolved"></div>
+      <div class="queue-item-body">
+        <div class="queue-issue-icon resolved-bg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div class="queue-content">
+          <div class="queue-top-row">
+            <span class="queue-priority-badge resolved">Resolved</span>
+            <span class="queue-issue-type">Receipt Scanning Anomaly · Family Dollar</span>
+            <span class="queue-time">Resolved 2h ago</span>
+          </div>
+          <div class="queue-headline">General Mills — Cereal Trial Drive</div>
+          <div class="queue-desc">Family Dollar receipt scanning returned a false-negative rate of 8.4% for multi-pack SKUs between 09:00–11:30. Root cause identified: barcode format mismatch after Family Dollar packaging update. <strong>1,204 affected redemptions retroactively verified</strong> and processed.</div>
+        </div>
+      </div>
+      <div class="queue-actions">
+        <button class="queue-action-btn resolved-btn">✓ Resolved</button>
+      </div>
+    </div>
+
+  </div><!-- /queue-list -->
+</div><!-- /screen-ops-queue -->
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN 3 — CAMPAIGN DETAIL · LIVELIFT
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-campaign-detail">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a onclick="showScreen('am-portfolio')">My Portfolio</a>
+    <span>›</span>
+    <a onclick="showBrand('liquid-death')">Liquid Death</a>
+    <span>›</span>
+    LiveLift Q2 Pilot
+  </div>
+
+  <!-- Campaign Hero -->
+  <div class="campaign-hero">
+    <div class="campaign-hero-left">
+      <div class="hero-avatar" style="background:#1C1F24;">LD</div>
+      <div>
+        <div class="hero-brand">Liquid Death</div>
+        <div class="hero-title">LiveLift Q2 Pilot</div>
+        <div class="hero-meta">
+          <div class="status-badge healthy" style="font-size:11px;"><div class="dot"></div>Outperforming</div>
+          <div class="hero-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Apr 5 – May 20, 2026
+          </div>
+          <div class="hero-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            39 days remaining
+          </div>
+          <div class="hero-pill">Campaign #IPN-4841</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right" style="flex-direction:column;align-items:flex-end;gap:10px;">
+      <!-- Primary actions -->
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="livelift-badge">
+          <div class="ll-dot"></div>
+          LiveLift™ Active
+        </div>
+        <button class="btn btn-secondary" style="font-size:13px;padding:9px 16px;">Generate Recap</button>
+        <button class="btn btn-primary" style="font-size:13px;padding:9px 16px;">Adjust Budget</button>
+      </div>
+      <!-- Campaign operations -->
+      <div style="display:flex;align-items:center;gap:6px;">
+        <button class="btn btn-secondary" onclick="pauseCampaign(this)" style="font-size:12px;padding:7px 14px;display:flex;align-items:center;gap:6px;" id="pauseBtn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          Pause Campaign
+        </button>
+        <button class="btn btn-secondary" onclick="copyCampaign()" style="font-size:12px;padding:7px 14px;display:flex;align-items:center;gap:6px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy Campaign
+        </button>
+        <button class="btn btn-secondary" onclick="deleteCampaign()" style="font-size:12px;padding:7px 14px;display:flex;align-items:center;gap:6px;color:var(--red);border-color:var(--red);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Recommendation Bar -->
+  <div class="ai-rec-bar">
+    <div class="ai-rec-icon">AI</div>
+    <div class="ai-rec-content">
+      <div class="ai-rec-label">AI Recommendation · Budget Optimization</div>
+      <div class="ai-rec-text">
+        Walmart CPUM (<strong>$1.42</strong>) is <strong>47% more efficient</strong> than Dollar General ($2.69) on this campaign.
+        Shifting <strong>$25K</strong> from Dollar General to Walmart is projected to improve blended CPUM from $1.84 → <strong>$1.51</strong>
+        and add ~<strong>14,200 incremental units</strong> over the remaining flight.
+        Based on 6 similar Liquid Death campaigns in the beverage category.
+      </div>
+      <div class="ai-rec-actions">
+        <button class="ai-rec-btn apply">Apply Recommendation</button>
+        <button class="ai-rec-btn dismiss">Dismiss</button>
+        <button class="ai-rec-btn confidence">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          87% confidence · Third-party validated
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI Strip -->
+  <div class="kpi-strip">
+    <div class="kpi-card">
+      <div class="kpi-label">Incremental Lift</div>
+      <div class="kpi-value green">+19%</div>
+      <div class="kpi-delta pos">↑ +4pts vs Day 3</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Blended CPUM</div>
+      <div class="kpi-value">$1.84</div>
+      <div class="kpi-delta pos">↓ $0.44 vs forecast</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CPID</div>
+      <div class="kpi-value cyan">$0.43</div>
+      <div class="kpi-delta pos">↓ Best in category</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Units Moved</div>
+      <div class="kpi-value">89,234</div>
+      <div class="kpi-delta neu">incremental</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">New-to-Brand</div>
+      <div class="kpi-value">34%</div>
+      <div class="kpi-delta pos">↑ 8pts vs category avg</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Payback Period</div>
+      <div class="kpi-value">22 days</div>
+      <div class="kpi-delta pos">↓ 11 days vs target</div>
+    </div>
+  </div>
+
+  <!-- Main Two-Col Grid -->
+  <div class="detail-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <!-- LiveLift Chart -->
+      <div class="chart-card">
+
+        <!-- Title + Legend row -->
+        <div class="chart-header-top">
+          <div>
+            <div class="chart-card-title">Incremental Sales Lift · In-Flight</div>
+            <div class="chart-card-sub">Matched Audiences methodology · Exposed vs. Control · Updated every 4 hours</div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-dot" style="background:var(--cyan);"></div>
+              Exposed Group
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot" style="background:#D1D5DB;"></div>
+              Control Group
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot" style="background:rgba(64,209,245,0.2);width:16px;"></div>
+              Incremental Lift
+            </div>
+          </div>
+        </div>
+
+        <!-- Date Range Filter Row -->
+        <div class="date-range-row">
+          <div class="date-range-label">Range</div>
+          <div class="date-range-pills">
+            <div class="date-pill" onclick="setDateRange('today', this)">Today</div>
+            <div class="date-pill" onclick="setDateRange('7d', this)">Last 7 Days</div>
+            <div class="date-pill special" onclick="setDateRange('optimization', this)">
+              ✦ Since Last Optimization
+            </div>
+            <div class="date-pill active" onclick="setDateRange('full', this)">Full Flight</div>
+          </div>
+          <div class="custom-range-wrap">
+            <input type="date" id="dateFrom" value="2026-04-05" onchange="setDateRange('custom', null)">
+            <span class="custom-range-sep">→</span>
+            <input type="date" id="dateTo" value="2026-04-11" onchange="setDateRange('custom', null)">
+          </div>
+        </div>
+
+        <!-- KPI Selector Row -->
+        <div class="kpi-selector-row" id="chartKpiRow">
+          <div class="kpi-selector-label">Metric</div>
+          <div class="kpi-pills" id="chartKpiPills">
+            <div class="kpi-pill active" onclick="setKPI('lift', this)">
+              <div class="kpi-pill-dot"></div>Incremental Lift %
+            </div>
+            <div class="kpi-pill" onclick="setKPI('cpum', this)">
+              <div class="kpi-pill-dot"></div>CPUM by Day
+            </div>
+            <div class="kpi-pill" onclick="setKPI('units', this)">
+              <div class="kpi-pill-dot"></div>Daily Units Moved
+            </div>
+            <div class="kpi-pill" onclick="setKPI('spend', this)">
+              <div class="kpi-pill-dot"></div>Daily Spend
+            </div>
+            <div class="kpi-pill" onclick="setKPI('ntb', this)">
+              <div class="kpi-pill-dot"></div>New-to-Brand %
+            </div>
+          </div>
+        </div>
+
+        <!-- Optimization context note (hidden by default) -->
+        <div class="optimization-note" id="optimizationNote" style="display:none;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          Showing performance since budget reallocation on Apr 9 — $10K shifted from Dollar General to Walmart. CPUM improved $2.10 → $1.84 in this window.
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="liveliftChart"></canvas>
+        </div>
+
+        <!-- Summary stats below chart -->
+        <div style="display:flex;gap:24px;margin-top:14px;padding-top:12px;border-top:1px solid var(--gray-border);">
+          <div>
+            <div style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;">Avg Daily Lift</div>
+            <div id="statAvgLift" style="font-size:16px;font-weight:700;color:var(--black);margin-top:2px;">+19.4%</div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;">Peak</div>
+            <div id="statPeak" style="font-size:16px;font-weight:700;color:var(--black);margin-top:2px;">Apr 10 · +25%</div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;">Projected End Lift</div>
+            <div id="statProjected" style="font-size:16px;font-weight:700;color:var(--green);margin-top:2px;">+21% ± 2pts</div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;">Range Applied</div>
+            <div id="statRange" style="font-size:13px;font-weight:600;color:var(--black);margin-top:2px;">Full Flight · Apr 5–11</div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;">Validated By</div>
+            <div style="font-size:13px;font-weight:600;color:var(--black);margin-top:2px;">Circana · ABCS</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Retailer Performance Table -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <div>
+            <div class="chart-card-title">Retailer Performance Breakdown</div>
+            <div class="chart-card-sub" id="tableKpiSub">Sorted by CPUM · best to worst · Click column headers to re-sort</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary" style="font-size:12px;padding:6px 12px;">Export CSV</button>
+          </div>
+        </div>
+        <!-- Table KPI Selector -->
+        <div class="kpi-selector-row" style="margin-bottom:14px;">
+          <div class="kpi-selector-label">Sort by</div>
+          <div class="kpi-pills" id="tableKpiPills">
+            <div class="kpi-pill active" onclick="setTableKPI('cpum',this)"><div class="kpi-pill-dot"></div>CPUM</div>
+            <div class="kpi-pill" onclick="setTableKPI('cpid',this)"><div class="kpi-pill-dot"></div>CPID</div>
+            <div class="kpi-pill" onclick="setTableKPI('lift',this)"><div class="kpi-pill-dot"></div>Lift %</div>
+            <div class="kpi-pill" onclick="setTableKPI('units',this)"><div class="kpi-pill-dot"></div>Units Moved</div>
+            <div class="kpi-pill" onclick="setTableKPI('budget',this)"><div class="kpi-pill-dot"></div>Budget Used</div>
+          </div>
+        </div>
+        <table class="retailer-table" id="retailerTable">
+          <thead>
+            <tr>
+              <th>Retailer</th>
+              <th id="th-cpum" class="sorted" data-col="cpum" onclick="sortTableByCol('cpum')">CPUM ↑</th>
+              <th id="th-cpid" data-col="cpid" onclick="sortTableByCol('cpid')">CPID</th>
+              <th id="th-lift" data-col="lift" onclick="sortTableByCol('lift')">Lift %</th>
+              <th id="th-units" data-col="units" onclick="sortTableByCol('units')">Units Moved</th>
+              <th id="th-budget" data-col="budget" onclick="sortTableByCol('budget')">Budget Used</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-cpum="1.42" data-cpid="0.33" data-lift="23" data-units="52340" data-budget="89">
+              <td><div class="retailer-name"><div class="retailer-dot" style="background:#0071CE;"></div>Walmart</div></td>
+              <td id="cell-cpum-walmart"><span class="cpum-good">$1.42</span></td>
+              <td>$0.33</td>
+              <td style="color:var(--green);font-weight:600;">+23%</td>
+              <td>52,340</td>
+              <td>
+                <div class="mini-bar-wrap">
+                  <div class="mini-bar-track"><div class="mini-bar-fill warn" style="width:89%;"></div></div>
+                  <span style="font-size:11px;color:var(--amber);font-weight:600;">89%</span>
+                </div>
+              </td>
+              <td><span class="retailer-status warn">Near Limit</span></td>
+            </tr>
+            <tr data-cpum="1.61" data-cpid="0.37" data-lift="21" data-units="2554" data-budget="6">
+              <td><div class="retailer-name"><div class="retailer-dot" style="background:#40D1F5;"></div>Ibotta App</div></td>
+              <td><span class="cpum-good">$1.61</span></td>
+              <td>$0.37</td>
+              <td style="color:var(--green);font-weight:600;">+21%</td>
+              <td>2,554</td>
+              <td>
+                <div class="mini-bar-wrap">
+                  <div class="mini-bar-track"><div class="mini-bar-fill" style="width:6%;"></div></div>
+                  <span style="font-size:11px;color:#9CA3AF;">6%</span>
+                </div>
+              </td>
+              <td><span class="retailer-status ok">On Track</span></td>
+            </tr>
+            <tr data-cpum="1.98" data-cpid="0.46" data-lift="19" data-units="11240" data-budget="16">
+              <td><div class="retailer-name"><div class="retailer-dot" style="background:#FF6B00;"></div>Instacart</div></td>
+              <td><span class="cpum-mid">$1.98</span></td>
+              <td>$0.46</td>
+              <td style="color:var(--green);font-weight:600;">+19%</td>
+              <td>11,240</td>
+              <td>
+                <div class="mini-bar-wrap">
+                  <div class="mini-bar-track"><div class="mini-bar-fill" style="width:16%;"></div></div>
+                  <span style="font-size:11px;color:#9CA3AF;">16%</span>
+                </div>
+              </td>
+              <td><span class="retailer-status ok">On Track</span></td>
+            </tr>
+            <tr data-cpum="2.14" data-cpid="0.50" data-lift="15" data-units="4180" data-budget="6">
+              <td><div class="retailer-name"><div class="retailer-dot" style="background:#EF4444;"></div>DoorDash</div></td>
+              <td><span class="cpum-mid">$2.14</span></td>
+              <td>$0.50</td>
+              <td style="font-weight:600;">+15%</td>
+              <td>4,180</td>
+              <td>
+                <div class="mini-bar-wrap">
+                  <div class="mini-bar-track"><div class="mini-bar-fill" style="width:6%;"></div></div>
+                  <span style="font-size:11px;color:#9CA3AF;">6%</span>
+                </div>
+              </td>
+              <td><span class="retailer-status ok">On Track</span></td>
+            </tr>
+            <tr data-cpum="2.69" data-cpid="0.63" data-lift="12" data-units="18920" data-budget="42">
+              <td><div class="retailer-name"><div class="retailer-dot" style="background:#F59E0B;"></div>Dollar General</div></td>
+              <td><span class="cpum-bad">$2.69</span></td>
+              <td>$0.63</td>
+              <td style="font-weight:600;">+12%</td>
+              <td>18,920</td>
+              <td>
+                <div class="mini-bar-wrap">
+                  <div class="mini-bar-track"><div class="mini-bar-fill" style="width:42%;"></div></div>
+                  <span style="font-size:11px;color:#9CA3AF;">42%</span>
+                </div>
+              </td>
+              <td><span class="retailer-status ok">On Track</span></td>
+            </tr>
+            <tr class="total-row">
+              <td>Total / Blended</td>
+              <td>$1.84</td>
+              <td>$0.43</td>
+              <td style="color:var(--green);">+19%</td>
+              <td>89,234</td>
+              <td>
+                <div class="mini-bar-wrap">
+                  <div class="mini-bar-track"><div class="mini-bar-fill" style="width:52%;"></div></div>
+                  <span style="font-size:11px;color:#9CA3AF;">52%</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- /left col -->
+
+    <!-- RIGHT COLUMN -->
+    <div>
+
+      <!-- Budget & Pacing -->
+      <div class="detail-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--gray-border);">
+          <div class="detail-panel-title" style="margin:0;padding:0;border:none;">Budget &amp; Pacing</div>
+          <span style="background:#FEF3C7;color:#92400E;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:0.04em;">OVERPACING</span>
+        </div>
+
+        <!-- Total spend bar -->
+        <div style="margin-bottom:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">
+            <span style="font-size:20px;font-weight:700;color:var(--black);">$94,000</span>
+            <span style="font-size:12px;color:#9CA3AF;">of $180,000 total</span>
+          </div>
+          <!-- Pacing bar: actual spend + expected-pace marker -->
+          <div style="position:relative;height:10px;background:var(--gray-light);border-radius:100px;overflow:visible;margin-bottom:18px;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:52%;background:var(--amber);border-radius:100px;"></div>
+            <!-- Expected pace marker at 13.3% (day 6 of 45) -->
+            <div style="position:absolute;top:-3px;left:13.3%;width:2px;height:16px;background:var(--black);border-radius:1px;"></div>
+            <!-- Label below the bar -->
+            <div style="position:absolute;top:14px;left:13.3%;transform:translateX(-50%);font-size:9px;font-weight:600;color:var(--gray-mid);white-space:nowrap;">▲ Expected</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;">
+            <span style="color:var(--amber);font-weight:600;">52% spent · Day 6 of 45</span>
+            <span style="color:#9CA3AF;">13% expected</span>
+          </div>
+        </div>
+
+        <!-- Pacing detail rows -->
+        <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:11px 13px;margin-bottom:14px;display:flex;flex-direction:column;gap:7px;">
+          <div style="display:flex;justify-content:space-between;font-size:12px;">
+            <span style="color:#92400E;">Burn rate</span>
+            <span style="font-weight:600;color:var(--black);">$15,667 / day</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;">
+            <span style="color:#92400E;">Ideal rate</span>
+            <span style="font-weight:600;color:var(--black);">$4,000 / day</span>
+          </div>
+          <div style="height:1px;background:#FDE68A;"></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;align-items:center;">
+            <span style="color:#92400E;">Projected exhaust</span>
+            <span style="font-weight:700;color:var(--red);">~Apr 16 <span style="font-weight:400;color:#9CA3AF;font-size:11px;">(34 days early)</span></span>
+          </div>
+        </div>
+
+        <!-- Daily cap -->
+        <div style="margin-bottom:14px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:12px;font-weight:600;color:var(--black);">Daily Cap</span>
+            <button onclick="editDailyCap()" style="font-size:11px;font-weight:600;color:#0369A1;background:none;border:none;cursor:pointer;padding:0;">Edit</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;">
+            <span style="font-size:13px;color:var(--gray-mid);">$19,100 today</span>
+            <span style="font-size:12px;color:#9CA3AF;">cap: $20,000</span>
+          </div>
+          <div style="height:6px;background:var(--gray-light);border-radius:100px;overflow:hidden;">
+            <div style="width:95.5%;height:100%;background:var(--amber);border-radius:100px;"></div>
+          </div>
+          <div style="font-size:11px;color:var(--amber);font-weight:500;margin-top:4px;">95% of daily cap reached</div>
+        </div>
+
+        <!-- Per-publisher breakdown -->
+        <div style="border-top:1px solid var(--gray-border);padding-top:12px;">
+          <div style="font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">By Publisher</div>
+          <div class="budget-breakdown">
+            <div class="budget-line">
+              <div class="budget-line-header">
+                <span class="budget-line-name">Walmart</span>
+                <span class="budget-line-amount" style="color:var(--amber);">$74K / $83K · 89%</span>
+              </div>
+              <div class="budget-micro-track">
+                <div class="budget-micro-fill" style="width:89%;background:var(--amber);"></div>
+              </div>
+            </div>
+            <div class="budget-line">
+              <div class="budget-line-header">
+                <span class="budget-line-name">Dollar General</span>
+                <span class="budget-line-amount">$13K / $31K · 42%</span>
+              </div>
+              <div class="budget-micro-track">
+                <div class="budget-micro-fill" style="width:42%;background:var(--cyan);"></div>
+              </div>
+            </div>
+            <div class="budget-line">
+              <div class="budget-line-header">
+                <span class="budget-line-name">Instacart</span>
+                <span class="budget-line-amount">$5K / $32K · 16%</span>
+              </div>
+              <div class="budget-micro-track">
+                <div class="budget-micro-fill" style="width:16%;background:var(--cyan);"></div>
+              </div>
+            </div>
+            <div class="budget-line">
+              <div class="budget-line-header">
+                <span class="budget-line-name">DoorDash + App</span>
+                <span class="budget-line-amount">$2K / $34K · 6%</span>
+              </div>
+              <div class="budget-micro-track">
+                <div class="budget-micro-fill" style="width:6%;background:var(--cyan);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campaign Details -->
+      <div class="detail-panel">
+        <div class="detail-panel-title">Campaign Details</div>
+        <div class="detail-row">
+          <div class="detail-row-label">Offer Value</div>
+          <div class="detail-row-value">$2.00 cash back</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Eligible Products</div>
+          <div class="detail-row-value">All Liquid Death varieties · Min 1 unit</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Targeting</div>
+          <div class="detail-row-value">Non-buyers last 6 months · Ages 21–45</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Active Publishers</div>
+          <div class="detail-row-value">5 publishers · 3,000+ retail locations</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Adjudication</div>
+          <div class="detail-row-value">Real-time · Anti-stacking enabled</div>
+        </div>
+        <div class="detail-row" style="margin-bottom:0;">
+          <div class="detail-row-label">Account Manager</div>
+          <div class="detail-row-value">Jordan Mills</div>
+        </div>
+      </div>
+
+      <!-- Measurement -->
+      <div class="detail-panel">
+        <div class="detail-panel-title">Measurement · Matched Audiences</div>
+        <div class="detail-row">
+          <div class="detail-row-label">Methodology</div>
+          <div class="detail-row-value" style="color:#0369A1;">Matched Audiences v2</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Control Group</div>
+          <div class="detail-row-value">Post-hoc · 28,400 matched consumers</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Statistical Confidence</div>
+          <div class="detail-row-value" style="color:var(--green);font-weight:600;">95.2%</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">3rd Party Validation</div>
+          <div class="detail-row-value">Circana · ABCS</div>
+        </div>
+        <div class="detail-row" style="margin-bottom:0;">
+          <div class="detail-row-label">Data Refresh</div>
+          <div class="detail-row-value">Every 4 hours</div>
+        </div>
+      </div>
+
+    </div><!-- /right col -->
+  </div><!-- /detail-grid -->
+</div><!-- /screen-campaign-detail -->
+
+<!-- ═══════════════════════════════════════════════════════
+     REMOVED PLACEHOLDER SCREENS
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-market-insights">
+  <div class="page-header">
+    <div class="page-title">Market Insights</div>
+    <div class="page-sub">Category intelligence, consumer trends, and competitive benchmarks to inform campaign strategy</div>
+  </div>
+
+  <!-- Coming Soon Banner -->
+  <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:16px;padding:40px;margin-bottom:24px;display:flex;align-items:flex-start;gap:32px;">
+    <div style="flex-shrink:0;width:56px;height:56px;background:#F0FBFE;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="font-size:18px;font-weight:700;color:var(--black);">Pre-Campaign Intelligence Hub</div>
+        <span style="background:#E0F8FF;color:#0369A1;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.04em;">IN DESIGN</span>
+      </div>
+      <div style="font-size:14px;color:var(--gray-mid);line-height:1.6;max-width:600px;">
+        Market Insights will give brand teams and account managers the category intelligence they need before a campaign brief is written — so offer strategy is anchored in data, not assumptions.
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;">
+        <span style="background:var(--gray-light);border:1px solid var(--gray-border);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:500;color:var(--gray-mid);">Q3 2026 Roadmap</span>
+        <span style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:100px;padding:5px 14px;font-size:12px;font-weight:500;color:#15803D;">Discovery Complete</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three capability preview cards -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;">
+
+    <!-- Card 1: Category Benchmarks -->
+    <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--cyan);"></div>
+      <div style="width:40px;height:40px;background:#F0FBFE;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:6px;">Category Benchmarks</div>
+      <div style="font-size:12px;color:#9CA3AF;line-height:1.6;margin-bottom:16px;">Average CPUM, redemption rates, and incremental lift by category — so brands know what good looks like before they set budget.</div>
+      <!-- Wireframe placeholder -->
+      <div style="background:var(--gray-light);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-size:11px;font-weight:600;color:#9CA3AF;">CATEGORY</div>
+          <div style="font-size:11px;font-weight:600;color:#9CA3AF;">AVG CPUM</div>
+          <div style="font-size:11px;font-weight:600;color:#9CA3AF;">LIFT</div>
+        </div>
+        <div style="height:1px;background:var(--gray-border);"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="width:70px;height:10px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:40px;height:10px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:35px;height:10px;background:#BAE6FD;border-radius:4px;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="width:55px;height:10px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:40px;height:10px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:35px;height:10px;background:#BAE6FD;border-radius:4px;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div style="width:80px;height:10px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:40px;height:10px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:35px;height:10px;background:#BBF7D0;border-radius:4px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Consumer Behavior -->
+    <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--ruby);"></div>
+      <div style="width:40px;height:40px;background:#FFF0F5;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ED2564" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:6px;">Consumer Purchase Signals</div>
+      <div style="font-size:12px;color:#9CA3AF;line-height:1.6;margin-bottom:16px;">Buyer frequency, basket affinity, and lapsed-purchaser opportunity sizing — built from 200M+ consumer transaction records.</div>
+      <!-- Wireframe placeholder: donut + legend -->
+      <div style="background:var(--gray-light);border-radius:8px;padding:14px;display:flex;align-items:center;gap:14px;">
+        <div style="width:64px;height:64px;border-radius:50%;background:conic-gradient(#ED2564 0deg 130deg,#40D1F5 130deg 220deg,#22C55E 220deg 290deg,#F59E0B 290deg 360deg);flex-shrink:0;"></div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--gray-mid);"><div style="width:8px;height:8px;border-radius:2px;background:#ED2564;flex-shrink:0;"></div>New buyers</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--gray-mid);"><div style="width:8px;height:8px;border-radius:2px;background:#40D1F5;flex-shrink:0;"></div>Loyalists</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--gray-mid);"><div style="width:8px;height:8px;border-radius:2px;background:#22C55E;flex-shrink:0;"></div>Switchers</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--gray-mid);"><div style="width:8px;height:8px;border-radius:2px;background:#F59E0B;flex-shrink:0;"></div>Lapsed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Offer Simulator -->
+    <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+      <div style="width:40px;height:40px;background:#F0FDF4;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:6px;">Offer Value Simulator</div>
+      <div style="font-size:12px;color:#9CA3AF;line-height:1.6;margin-bottom:16px;">Enter a target CPUM or sales lift goal and see the recommended offer value, budget, and retailer mix — powered by historical campaign performance.</div>
+      <!-- Wireframe placeholder: input + projected output -->
+      <div style="background:var(--gray-light);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:11px;color:#9CA3AF;flex-shrink:0;width:70px;">Target lift</div>
+          <div style="flex:1;height:28px;background:white;border:1px solid var(--gray-border);border-radius:6px;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:11px;color:#9CA3AF;flex-shrink:0;width:70px;">Budget</div>
+          <div style="flex:1;height:28px;background:white;border:1px solid var(--gray-border);border-radius:6px;"></div>
+        </div>
+        <div style="height:1px;background:var(--gray-border);margin:2px 0;"></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;">
+          <span style="color:#9CA3AF;">Suggested offer value</span>
+          <span style="font-weight:600;color:var(--green);">$1.25 off</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;">
+          <span style="color:#9CA3AF;">Est. incremental lift</span>
+          <span style="font-weight:600;color:var(--green);">+18–22%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Signal strip at bottom -->
+  <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:20px;">
+    <div style="flex-shrink:0;">
+      <div style="font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;">Powered by</div>
+      <div style="font-size:13px;font-weight:600;color:var(--black);">IPN First-Party Data</div>
+    </div>
+    <div style="width:1px;height:36px;background:var(--gray-border);"></div>
+    <div style="display:flex;gap:24px;flex:1;">
+      <div><div style="font-size:20px;font-weight:700;color:var(--black);">200M+</div><div style="font-size:11px;color:#9CA3AF;">consumers</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:var(--black);">2,600+</div><div style="font-size:11px;color:#9CA3AF;">brands</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:var(--black);">1,000+</div><div style="font-size:11px;color:#9CA3AF;">publisher partners</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:var(--black);">19M</div><div style="font-size:11px;color:#9CA3AF;">monthly transactions</div></div>
+    </div>
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:6px;font-size:12px;color:#0369A1;background:#F0FBFE;border:1px solid #BAE6FD;padding:8px 16px;border-radius:8px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Circana + ABCS validated
+    </div>
+  </div>
+
+</div><!-- /screen-market-insights -->
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN 5 — REPORTS (PLACEHOLDER)
+════════════════════════════════════════════════════════ -->
+<div class="screen" id="screen-reports">
+  <div class="page-header">
+    <div class="page-title">Reports</div>
+    <div class="page-sub">Post-campaign performance summaries, exportable recaps, and executive-ready dashboards</div>
+  </div>
+
+  <!-- Coming Soon Banner -->
+  <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:16px;padding:40px;margin-bottom:24px;display:flex;align-items:flex-start;gap:32px;">
+    <div style="flex-shrink:0;width:56px;height:56px;background:#F5F3FF;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    </div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="font-size:18px;font-weight:700;color:var(--black);">Unified Reporting Suite</div>
+        <span style="background:#F5F3FF;color:#7C3AED;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.04em;">IN DESIGN</span>
+      </div>
+      <div style="font-size:14px;color:var(--gray-mid);line-height:1.6;max-width:600px;">
+        Reports consolidates post-campaign incrementality analysis, client-ready recaps, and cross-campaign comparison — eliminating the manual Excel + Looker workflow that AMs spend hours on today.
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;">
+        <span style="background:var(--gray-light);border:1px solid var(--gray-border);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:500;color:var(--gray-mid);">Q3 2026 Roadmap</span>
+        <span style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:100px;padding:5px 14px;font-size:12px;font-weight:500;color:#15803D;">Discovery Complete</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three report type cards -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;">
+
+    <!-- Card 1: Campaign Recap -->
+    <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7C3AED;"></div>
+      <div style="width:40px;height:40px;background:#F5F3FF;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:6px;">1-Click Campaign Recap</div>
+      <div style="font-size:12px;color:#9CA3AF;line-height:1.6;margin-bottom:16px;">Auto-generate a client-ready performance summary with incremental lift, CPUM by retailer, new-to-brand rate, and payback period — ready to share in seconds.</div>
+      <div style="background:var(--gray-light);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="width:120px;height:12px;background:var(--gray-border);border-radius:4px;"></div>
+          <div style="width:60px;height:22px;background:#7C3AED;border-radius:6px;opacity:0.2;"></div>
+        </div>
+        <div style="height:1px;background:var(--gray-border);"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:white;border-radius:6px;padding:8px;"><div style="width:40px;height:8px;background:var(--gray-border);border-radius:3px;margin-bottom:4px;"></div><div style="width:55px;height:14px;background:#BAE6FD;border-radius:3px;"></div></div>
+          <div style="background:white;border-radius:6px;padding:8px;"><div style="width:40px;height:8px;background:var(--gray-border);border-radius:3px;margin-bottom:4px;"></div><div style="width:55px;height:14px;background:#BBF7D0;border-radius:3px;"></div></div>
+          <div style="background:white;border-radius:6px;padding:8px;"><div style="width:40px;height:8px;background:var(--gray-border);border-radius:3px;margin-bottom:4px;"></div><div style="width:55px;height:14px;background:#BAE6FD;border-radius:3px;"></div></div>
+          <div style="background:white;border-radius:6px;padding:8px;"><div style="width:40px;height:8px;background:var(--gray-border);border-radius:3px;margin-bottom:4px;"></div><div style="width:55px;height:14px;background:#FDE68A;border-radius:3px;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Cross-Campaign -->
+    <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--amber);"></div>
+      <div style="width:40px;height:40px;background:#FFFBEB;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:6px;">Cross-Campaign Comparison</div>
+      <div style="font-size:12px;color:#9CA3AF;line-height:1.6;margin-bottom:16px;">Compare performance across flights, brands, and time periods to identify what's working and inform future offer strategy — without manual data exports.</div>
+      <div style="background:var(--gray-light);border-radius:8px;padding:14px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:80px;height:10px;background:var(--gray-border);border-radius:3px;flex-shrink:0;"></div>
+            <div style="flex:1;height:10px;background:#F59E0B;border-radius:3px;opacity:0.6;"></div>
+            <div style="font-size:10px;color:var(--gray-mid);width:30px;text-align:right;">+19%</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:80px;height:10px;background:var(--gray-border);border-radius:3px;flex-shrink:0;"></div>
+            <div style="width:70%;height:10px;background:#F59E0B;border-radius:3px;opacity:0.5;"></div>
+            <div style="font-size:10px;color:var(--gray-mid);width:30px;text-align:right;">+14%</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:80px;height:10px;background:var(--gray-border);border-radius:3px;flex-shrink:0;"></div>
+            <div style="width:55%;height:10px;background:#F59E0B;border-radius:3px;opacity:0.4;"></div>
+            <div style="font-size:10px;color:var(--gray-mid);width:30px;text-align:right;">+11%</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:80px;height:10px;background:var(--gray-border);border-radius:3px;flex-shrink:0;"></div>
+            <div style="width:40%;height:10px;background:#F59E0B;border-radius:3px;opacity:0.3;"></div>
+            <div style="font-size:10px;color:var(--gray-mid);width:30px;text-align:right;">+8%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Executive Dashboard -->
+    <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;padding:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+      <div style="width:40px;height:40px;background:#F0FDF4;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:600;color:var(--black);margin-bottom:6px;">Executive Summary View</div>
+      <div style="font-size:12px;color:#9CA3AF;line-height:1.6;margin-bottom:16px;">Portfolio-level roll-up: total incremental revenue driven, average CPID across the account, and a top-line narrative ready for QBR decks.</div>
+      <div style="background:var(--gray-light);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:11px;color:#9CA3AF;">Total incremental revenue</span>
+          <span style="font-size:14px;font-weight:700;color:var(--green);">$2.4M</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:11px;color:#9CA3AF;">Avg CPID across portfolio</span>
+          <span style="font-size:14px;font-weight:700;color:var(--black);">$0.18</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:11px;color:#9CA3AF;">New-to-brand buyers</span>
+          <span style="font-size:14px;font-weight:700;color:#0284C7;">34.2%</span>
+        </div>
+        <div style="height:1px;background:var(--gray-border);"></div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#15803D;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Export to PDF / PowerPoint
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Existing Reports table (placeholder) -->
+  <div style="background:var(--white);border:1px solid var(--gray-border);border-radius:12px;overflow:hidden;">
+    <div style="padding:18px 20px;border-bottom:1px solid var(--gray-border);display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:var(--black);">Recent Reports</div>
+        <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Post-campaign summaries generated to date</div>
+      </div>
+      <button class="btn btn-secondary" style="font-size:12px;">Export All</button>
+    </div>
+    <table style="width:100%;border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="padding:10px 20px;text-align:left;font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);">Campaign</th>
+          <th style="padding:10px 20px;text-align:left;font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);">Brand</th>
+          <th style="padding:10px 20px;text-align:left;font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);">Lift</th>
+          <th style="padding:10px 20px;text-align:left;font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);">CPUM</th>
+          <th style="padding:10px 20px;text-align:left;font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);">Date</th>
+          <th style="padding:10px 20px;text-align:left;font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="cursor:pointer;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background=''">
+          <td style="padding:13px 20px;font-size:13px;font-weight:500;color:var(--black);">LiveLift Q2 Pilot</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">Liquid Death</td>
+          <td style="padding:13px 20px;font-size:13px;font-weight:600;color:var(--green);">+19.4%</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">$1.82</td>
+          <td style="padding:13px 20px;font-size:12px;color:#9CA3AF;">Apr 4 – Apr 18, 2026</td>
+          <td style="padding:13px 20px;"><button class="btn btn-secondary" style="font-size:11px;padding:5px 10px;">Download</button></td>
+        </tr>
+        <tr style="cursor:pointer;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background=''">
+          <td style="padding:13px 20px;font-size:13px;font-weight:500;color:var(--black);">Cereal Trial Drive Q1</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">General Mills</td>
+          <td style="padding:13px 20px;font-size:13px;font-weight:600;color:var(--green);">+14.2%</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">$2.04</td>
+          <td style="padding:13px 20px;font-size:12px;color:#9CA3AF;">Feb 1 – Mar 15, 2026</td>
+          <td style="padding:13px 20px;"><button class="btn btn-secondary" style="font-size:11px;padding:5px 10px;">Download</button></td>
+        </tr>
+        <tr style="cursor:pointer;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background=''">
+          <td style="padding:13px 20px;font-size:13px;font-weight:500;color:var(--black);">Summer Refresh H1</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">PepsiCo</td>
+          <td style="padding:13px 20px;font-size:13px;font-weight:600;color:var(--green);">+11.8%</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">$2.31</td>
+          <td style="padding:13px 20px;font-size:12px;color:#9CA3AF;">Jan 10 – Feb 28, 2026</td>
+          <td style="padding:13px 20px;"><button class="btn btn-secondary" style="font-size:11px;padding:5px 10px;">Download</button></td>
+        </tr>
+        <tr style="cursor:pointer;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background=''">
+          <td style="padding:13px 20px;font-size:13px;font-weight:500;color:var(--black);">Natural Foods Discovery</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">Hain Celestial</td>
+          <td style="padding:13px 20px;font-size:13px;font-weight:600;color:var(--amber);">+8.1%</td>
+          <td style="padding:13px 20px;font-size:13px;color:var(--gray-mid);">$2.67</td>
+          <td style="padding:13px 20px;font-size:12px;color:#9CA3AF;">Dec 1 – Jan 5, 2026</td>
+          <td style="padding:13px 20px;"><button class="btn btn-secondary" style="font-size:11px;padding:5px 10px;">Download</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /screen-reports -->
+
+</main>
+
+
+<script src="app.js"></script>
+</body>
+</html>
