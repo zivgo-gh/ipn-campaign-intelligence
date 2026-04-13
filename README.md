@@ -53,6 +53,8 @@ Both AMs and Ops see this same view. The suggested actions shown here — budget
 
 A drill-down from the portfolio into a single brand's campaigns. Shows all campaigns for that brand, an aggregated performance chart with LiveLift data (Incremental Lift %, CPUM by Day, Units Moved, Daily Spend, New-to-Brand Rate), and AI-surfaced opportunities scoped to that brand.
 
+> **Prototype scope note:** The brand and campaign detail screens are fully built out for Liquid Death and its LiveLift Q2 Pilot campaign only. Other brands on the portfolio are present as representative cards but do not drill through to populated detail screens.
+
 The "Since Last Optimization" date range is an assumption about a feature that doesn't necessarily exist today — the idea being that when a mid-flight change is made, the user can isolate performance to just the period after that change to answer: *Did it work?*
 
 **Design principle:** Where the data points to a clear opportunity or problem, surface a recommended action alongside it. Not every view needs to drive action — sometimes visibility is the goal — but when the system can see something worth acting on, it shouldn't make the user figure that out themselves.
