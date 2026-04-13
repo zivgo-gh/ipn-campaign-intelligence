@@ -25,9 +25,13 @@ Where I didn't have specifics, I made reasonable assumptions based on how simila
 
 Based on my research, the IPN platform has strong underlying infrastructure: a pay-per-sale model, an incrementality methodology (Matched Audiences) that proves causation rather than just correlation, and LiveLift — launched in late 2025 — which appears to bring in-flight performance measurement to campaigns while they're still running.
 
-The opportunity I see in the portal layer is around how that data reaches the people who need to act on it. My assumption — and it is an assumption — is that account managers today spend meaningful time pulling data, building recaps, and manually monitoring campaigns for issues. And that ops teams work reactively, discovering problems through data diving rather than being surfaced to them.
+The opportunity I see in the portal layer is around how that data reaches the people who need to act on it. My assumption about the two personas I focused on:
 
-**The thesis behind this prototype:** A portal that continuously analyzes what's happening across campaigns, surfaces the problems and opportunities proactively, ranks them by urgency, and attaches a specific recommended action — so nobody has to go looking.
+**Account managers** are primarily relationship managers and data consumers — monitoring performance, communicating results to clients, growing accounts, and coordinating internally. They're not the ones configuring campaigns, but they depend on campaign data to do their job, and my guess is they spend more time hunting for it than acting on it.
+
+**Ops teams** are the execution layer — the ones actually configuring campaigns, making mid-flight adjustments, and managing exceptions. My assumption is that like most ops teams in this type of platform, a lot of their work is reactive: discovering issues through data diving rather than being surfaced to them proactively.
+
+**The thesis behind this prototype:** Give AMs the data and insights they need without requiring them to dig for it. Give ops a structured, prioritized workflow instead of a reactive discovery process. Both problems have the same root cause — the platform has the data, but it doesn't surface it to the right person at the right moment with the right recommended action.
 
 ---
 
@@ -80,7 +84,7 @@ The "Since Last Optimization" date range is an assumption about a feature that d
 
 ## Why I focused on AM and Ops, not the brand client
 
-This was a deliberate scoping decision. I've built platforms with a similar persona structure twice before — and in both cases, the internal efficiency gap was the highest-leverage place to start. AMs functioning as data translators, ops teams working reactively — those are patterns I recognize. Fixing them scales the platform's capacity without adding headcount, and creates the foundation that makes client-facing improvements meaningful.
+This was a deliberate scoping decision. I've built platforms with a similar persona structure twice before — and in both cases, the internal efficiency gap was the highest-leverage place to start. AMs who can't easily get to the data they need to manage relationships, and ops teams working through issues reactively — those are patterns I recognize. Addressing them scales the platform's capacity without adding headcount, and creates the foundation that makes client-facing improvements meaningful.
 
 I may be wrong about where Ibotta's biggest pain is today. That's part of what I'm hoping to learn on Friday.
 
