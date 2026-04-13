@@ -17,7 +17,7 @@ A high-fidelity interactive prototype of a redesigned portal experience for Ibot
 
 This prototype is based on publicly available information about Ibotta and the IPN — earnings calls, press releases, product announcements, and published case studies. I don't have insider knowledge of how the portal currently works, how the internal teams operate, or what's already been built.
 
-Where I didn't have specifics, I made reasonable assumptions based on how similar platforms in this space are structured. The goal isn't to accurately describe Ibotta's current state — it's to demonstrate how I think about the problem and what I'd prioritize building. I expect some of this will be wrong, and I'm looking forward to finding out where on Friday.
+Where I didn't have specifics, I made reasonable assumptions based on how similar platforms in this space are structured. The goal isn't to accurately describe Ibotta's current state — it's to demonstrate how I think about the problem. I expect some of this will be wrong, and I'm looking forward to finding out where on Friday.
 
 ---
 
@@ -25,7 +25,7 @@ Where I didn't have specifics, I made reasonable assumptions based on how simila
 
 Based on my research, the IPN platform has strong underlying infrastructure: a pay-per-sale model, an incrementality methodology (Matched Audiences) that proves causation rather than just correlation, and LiveLift — launched in late 2025 — which appears to bring in-flight performance measurement to campaigns while they're still running.
 
-The opportunity I see in the portal layer is around how that data reaches the people who need to act on it. My assumption about the two personas I focused on:
+One of the opportunities I see in the portal layer is around how that data reaches the people who need to act on it. My assumption about the two personas I focused on:
 
 **Account managers** are primarily relationship managers and data consumers — monitoring performance, communicating results to clients, growing accounts, and coordinating internally. They're not the ones configuring campaigns, but they depend on campaign data to do their job, and my guess is they spend more time hunting for it than acting on it.
 
@@ -35,21 +35,25 @@ The opportunity I see in the portal layer is around how that data reaches the pe
 
 ---
 
-## The four screens
+## The three screens
 
-### Screen 1 — Account Manager: Portfolio Command Center
+The portal uses a role switcher — the same three screens serve both AMs and Ops, with the content adapting based on who's logged in.
 
-The AM's home base. Every brand account at a glance — health indicators, CPUM, budget pacing, days left in flight. The right panel surfaces AI-generated opportunities ranked by urgency: budget alerts, retailer efficiency signals, renewal prompts — each with a specific, quantified recommendation attached.
+### Screen 1 — Portfolio
 
-**Design principle:** Never show data without a recommended action. If the system can't tell you what to do about a number, it's just a dashboard.
+The home screen, shaped by role. For an AM, it shows a portfolio of brand accounts with campaign health indicators, budget pacing, and an AI insights panel surfacing opportunities ranked by urgency — budget alerts, retailer efficiency signals, renewal prompts — each with a specific, quantified recommendation attached. For an Ops user, the same screen surfaces an action queue: a prioritized list of issues that need resolution — campaigns not redeeming, retailer feed delays, configuration errors — rather than a passive monitoring view.
+
+**Design principle:** Same underlying data, role-appropriate lens. The portal should know what each user needs to do with the information, not just show it.
 
 ---
 
-### Screen 2 — Ops: Action Queue
+### Screen 2 — Brand Detail (Liquid Death)
 
-The Ops team's view — same sidebar, different lens. A prioritized to-do list of everything that needs attention: live campaigns not redeeming, retailer feed delays, configuration errors before launch. Each item has a suggested fix and a one-click action.
+A drill-down from the portfolio into a single brand's campaigns. Shows all campaigns for that brand, an aggregated performance chart with LiveLift data (Incremental Lift %, CPUM by Day, Units Moved, Daily Spend, New-to-Brand Rate), and AI-surfaced opportunities scoped to that brand.
 
-**Design principle:** Ops shouldn't have to hunt for problems. The portal should know what's broken and bring it forward.
+The "Since Last Optimization" date range is an assumption about a feature that doesn't necessarily exist today — the idea being that when a mid-flight change is made, the user can isolate performance to just the period after that change to answer: *Did it work?*
+
+**Design principle:** Never show data without a recommended action. If the system can't tell you what to do about a number, it's just a dashboard.
 
 ---
 
@@ -58,14 +62,6 @@ The Ops team's view — same sidebar, different lens. A prioritized to-do list o
 The full in-flight performance view for a single campaign. The AI recommendation bar at the top translates data into a specific suggested action — "Walmart is 31% more efficient than Kroger, shifting $20K is projected to improve blended CPUM by $0.18." The retailer table shows CPUM broken out by publisher. Action buttons close the loop without leaving the screen.
 
 **Design principle:** Insight → decision → action on one screen. Every handoff out of the portal costs time and trust.
-
----
-
-### Screen 4 — Brand Detail (Liquid Death)
-
-A scoped portfolio view for a single brand — the same intelligence principles as the AM portfolio, focused on one account. Includes an aggregated performance chart with LiveLift data (Incremental Lift %, CPUM by Day, Units Moved, Daily Spend, New-to-Brand Rate), AI-surfaced opportunities specific to that brand, and the full campaign list.
-
-The "Since Last Optimization" date range is an assumption about a feature that doesn't necessarily exist today — the idea being that when a mid-flight change is made, the AM can isolate performance to just the period after that change to answer: *Did it work?*
 
 ---
 
