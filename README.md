@@ -55,7 +55,7 @@ A drill-down from the portfolio into a single brand's campaigns. Shows all campa
 
 The "Since Last Optimization" date range is an assumption about a feature that doesn't necessarily exist today — the idea being that when a mid-flight change is made, the user can isolate performance to just the period after that change to answer: *Did it work?*
 
-**Design principle:** Never show data without a recommended action. If the system can't tell you what to do about a number, it's just a dashboard.
+**Design principle:** Where the data points to a clear opportunity or problem, surface a recommended action alongside it. Not every view needs to drive action — sometimes visibility is the goal — but when the system can see something worth acting on, it shouldn't make the user figure that out themselves.
 
 ---
 
