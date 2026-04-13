@@ -9,7 +9,7 @@ A high-fidelity interactive prototype of a redesigned portal experience for Ibot
 
 **Built with:** HTML, CSS, JavaScript, Chart.js, and Claude Code (Anthropic's AI development tool). No frameworks, no build step — opens directly in a browser.
 
-**[→ View live prototype](https://zivgold.github.io/ipn-campaign-intelligence/)**
+**[→ View live prototype](https://zivgo-gh.github.io/ipn-campaign-intelligence/)**
 
 ---
 
