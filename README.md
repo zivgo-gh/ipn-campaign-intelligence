@@ -1,5 +1,5 @@
 # IPN Campaign Intelligence Center
-### A product prototype by Ziv Goldenberg
+### A product prototype by Ziv Gonen
 
 ---
 
@@ -13,13 +13,21 @@ A high-fidelity interactive prototype of a redesigned portal experience for Ibot
 
 ---
 
-## The problem it solves
+## A note on assumptions
 
-The IPN platform has exceptional infrastructure: pay-per-sale accountability, Matched Audiences incrementality, and LiveLift delivering in-flight performance data from 80+ retailers in near real-time.
+This prototype is based on publicly available information about Ibotta and the IPN — earnings calls, press releases, product announcements, and published case studies. I don't have insider knowledge of how the portal currently works, how the internal teams operate, or what's already been built.
 
-The gap is in what happens with that data. Today, account managers pull reports from Looker and build recap slides manually. Ops teams discover campaign issues reactively — by diving into data rather than being told what to look at. The platform surfaces data but doesn't act on it.
+Where I didn't have specifics, I made reasonable assumptions based on how similar platforms in this space are structured. The goal isn't to accurately describe Ibotta's current state — it's to demonstrate how I think about the problem and what I'd prioritize building. I expect some of this will be wrong, and I'm looking forward to finding out where on Friday.
 
-**The thesis behind this prototype:** A portal that continuously analyzes what's happening across campaigns, surfaces problems and opportunities proactively, ranks them by urgency, and attaches a specific recommended action to each one — so nobody has to go looking.
+---
+
+## The problem I chose to focus on
+
+Based on my research, the IPN platform has strong underlying infrastructure: a pay-per-sale model, an incrementality methodology (Matched Audiences) that proves causation rather than just correlation, and LiveLift — launched in late 2025 — which appears to bring in-flight performance measurement to campaigns while they're still running.
+
+The opportunity I see in the portal layer is around how that data reaches the people who need to act on it. My assumption — and it is an assumption — is that account managers today spend meaningful time pulling data, building recaps, and manually monitoring campaigns for issues. And that ops teams work reactively, discovering problems through data diving rather than being surfaced to them.
+
+**The thesis behind this prototype:** A portal that continuously analyzes what's happening across campaigns, surfaces the problems and opportunities proactively, ranks them by urgency, and attaches a specific recommended action — so nobody has to go looking.
 
 ---
 
@@ -53,7 +61,7 @@ The full in-flight performance view for a single campaign. The AI recommendation
 
 A scoped portfolio view for a single brand — the same intelligence principles as the AM portfolio, focused on one account. Includes an aggregated performance chart with LiveLift data (Incremental Lift %, CPUM by Day, Units Moved, Daily Spend, New-to-Brand Rate), AI-surfaced opportunities specific to that brand, and the full campaign list.
 
-The "Since Last Optimization" date range answers the question every AM asks after a mid-flight change: *Did it work?*
+The "Since Last Optimization" date range is an assumption about a feature that doesn't necessarily exist today — the idea being that when a mid-flight change is made, the AM can isolate performance to just the period after that change to answer: *Did it work?*
 
 ---
 
@@ -72,9 +80,9 @@ The "Since Last Optimization" date range answers the question every AM asks afte
 
 ## Why I focused on AM and Ops, not the brand client
 
-The hardest gap to close isn't client self-serve — it's internal efficiency. AMs are the data translators today: they pull reports, interpret results, and communicate back to clients. Ops teams are the execution layer with no structured workflow surfacing what needs attention.
+This was a deliberate scoping decision. I've built platforms with a similar persona structure twice before — and in both cases, the internal efficiency gap was the highest-leverage place to start. AMs functioning as data translators, ops teams working reactively — those are patterns I recognize. Fixing them scales the platform's capacity without adding headcount, and creates the foundation that makes client-facing improvements meaningful.
 
-Making AMs and Ops faster and more proactive scales the platform's capacity without adding headcount. That's the foundation everything else — client transparency, guided self-serve, predictive planning — sits on.
+I may be wrong about where Ibotta's biggest pain is today. That's part of what I'm hoping to learn on Friday.
 
 ---
 
