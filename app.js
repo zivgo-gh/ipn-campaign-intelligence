@@ -1,7 +1,7 @@
 // ── Brand data ──────────────────────────────────────────
 const brandData = {
   'kraft-heinz': {
-    name:'Kraft Heinz', initials:'KH', color:'#1B4FCC', am:'Jordan Mills',
+    name:'Kraft Heinz', initials:'KH', color:'#1B4FCC', am:'Jordan Mills', ops:'Dana Torres',
     totalSpend:'$306K', avgCpum:'$1.92',
     chart: {
       labels: ['Mar 15','Mar 22','Mar 29','Apr 5','Apr 12','Apr 19','Apr 26'],
@@ -13,17 +13,17 @@ const brandData = {
     campaigns:[
       { id:'IPN-4802', name:'Spring Condiments Promo', status:'live', health:'Healthy', healthClass:'healthy',
         startDate:'Mar 15', endDate:'Apr 28, 2026', daysLeft:'17 days left',
-        budget:'$450K', spent:'$306K', pacing:68, cpum:'$1.92', lift:'+18%' },
+        budget:'$450K', spent:'$306K', pacing:68, cpum:'$1.92', cpid:'$0.37', lift:'+18%' },
       { id:'IPN-4910', name:'Heinz Ketchup Summer Refresh', status:'draft', health:'Draft', healthClass:'setup',
         startDate:'Jun 10', endDate:'Aug 1, 2026', daysLeft:null,
-        budget:'$310K', spent:'—', pacing:0, cpum:'—', lift:'—' },
+        budget:'$310K', spent:'—', pacing:0, cpum:'—', cpid:'—', lift:'—' },
       { id:'IPN-4621', name:'Mac & Cheese Back-to-School', status:'ended', health:'Ended', healthClass:'setup',
         startDate:'Jan 15', endDate:'Feb 28, 2026', daysLeft:null,
-        budget:'$280K', spent:'$280K', pacing:100, cpum:'$2.18', lift:'+14%' }
+        budget:'$280K', spent:'$280K', pacing:100, cpum:'$2.18', cpid:'$0.41', lift:'+14%' }
     ]
   },
   'pepsico': {
-    name:'PepsiCo', initials:'PC', color:'#004B93', am:'Jordan Mills',
+    name:'PepsiCo', initials:'PC', color:'#004B93', am:'Jordan Mills', ops:'Dana Torres',
     totalSpend:'$748K', avgCpum:'$2.14',
     chart: {
       labels: ['Apr 1','Apr 5','Apr 8','Apr 11','Apr 14','Apr 17','Apr 20'],
@@ -35,14 +35,14 @@ const brandData = {
     campaigns:[
       { id:'IPN-4788', name:'Summer Refresh Campaign', status:'live', health:'Attention', healthClass:'attention',
         startDate:'Apr 1', endDate:'May 15, 2026', daysLeft:'34 days left',
-        budget:'$890K', spent:'$748K', pacing:84, cpum:'$2.14', lift:'+22%' },
+        budget:'$890K', spent:'$748K', pacing:84, cpum:'$2.14', cpid:'$0.41', lift:'+22%' },
       { id:'IPN-4955', name:"Lay's Game Day Promo", status:'draft', health:'Draft', healthClass:'setup',
         startDate:'Aug 15', endDate:'Sep 30, 2026', daysLeft:null,
-        budget:'$400K', spent:'—', pacing:0, cpum:'—', lift:'—' }
+        budget:'$400K', spent:'—', pacing:0, cpum:'—', cpid:'—', lift:'—' }
     ]
   },
   'general-mills': {
-    name:'General Mills', initials:'GM', color:'#CC0000', am:'Jordan Mills',
+    name:'General Mills', initials:'GM', color:'#CC0000', am:'Jordan Mills', ops:'Priya Nair',
     totalSpend:'$220K', avgCpum:'$2.93',
     chart: {
       labels: ['Mar 22','Mar 29','Apr 5','Apr 12','Apr 19','Apr 26','May 3'],
@@ -55,17 +55,17 @@ const brandData = {
     campaigns:[
       { id:'IPN-4815', name:'Cereal Trial Drive', status:'live', health:'Urgent', healthClass:'urgent',
         startDate:'Mar 22', endDate:'May 1, 2026', daysLeft:'20 days left',
-        budget:'$320K', spent:'$131K', pacing:41, cpum:'$3.80', lift:'+8%' },
+        budget:'$320K', spent:'$131K', pacing:41, cpum:'$3.80', cpid:'$0.72', lift:'+8%' },
       { id:'IPN-4831', name:'Nature Valley Snacking Push', status:'live', health:'Healthy', healthClass:'healthy',
         startDate:'Apr 1', endDate:'May 15, 2026', daysLeft:'34 days left',
-        budget:'$180K', spent:'$89K', pacing:49, cpum:'$2.05', lift:'+16%' },
+        budget:'$180K', spent:'$89K', pacing:49, cpum:'$2.05', cpid:'$0.39', lift:'+16%' },
       { id:'IPN-4680', name:'Pillsbury Holiday Bake', status:'ended', health:'Ended', healthClass:'setup',
         startDate:'Nov 1', endDate:'Dec 20, 2025', daysLeft:null,
-        budget:'$540K', spent:'$540K', pacing:100, cpum:'$1.76', lift:'+21%' }
+        budget:'$540K', spent:'$540K', pacing:100, cpum:'$1.76', cpid:'$0.34', lift:'+21%' }
     ]
   },
   'liquid-death': {
-    name:'Liquid Death', initials:'LD', color:'#1C1F24', am:'Jordan Mills',
+    name:'Liquid Death', initials:'LD', color:'#1C1F24', am:'Jordan Mills', ops:'Marcus Chen',
     totalSpend:'$161K', avgCpum:'$1.76',
     opportunities: [
       {
@@ -101,6 +101,7 @@ const brandData = {
           kpis: {
             lift:  { 'Portfolio Total':[16,17,18,19,19,19,19] },
             cpum:  { 'Portfolio Total':[1.78,1.77,1.77,1.76,1.76,1.76,1.76] },
+            cpid:  { 'Portfolio Total':[0.34,0.34,0.34,0.33,0.33,0.33,0.33] },
             units: { 'Portfolio Total':[3000,3900,4050,4150,4200,4000,4168] },
             spend: { 'Portfolio Total':[3300,3650,3850,4000,4150,3900,4084] },
             ntb:   { 'Portfolio Total':[33,33,34,34,34,35,34] }
@@ -111,6 +112,7 @@ const brandData = {
           kpis: {
             lift:  { 'Portfolio Total':[7,11,11,14,16,19,19] },
             cpum:  { 'Portfolio Total':[2.11,2.01,2.00,1.89,1.81,1.78,1.76] },
+            cpid:  { 'Portfolio Total':[0.40,0.38,0.38,0.36,0.34,0.34,0.33] },
             units: { 'Portfolio Total':[12300,17600,17400,20500,21900,23500,24618] },
             spend: { 'Portfolio Total':[20000,22800,21900,23800,24900,26300,27084] },
             ntb:   { 'Portfolio Total':[28,30,31,32,33,33,34] }
@@ -121,6 +123,7 @@ const brandData = {
           kpis: {
             lift:  { 'Portfolio Total':[14,16,19,19] },
             cpum:  { 'Portfolio Total':[1.89,1.81,1.78,1.76] },
+            cpid:  { 'Portfolio Total':[0.36,0.34,0.34,0.33] },
             units: { 'Portfolio Total':[20500,21900,23500,24618] },
             spend: { 'Portfolio Total':[23800,24900,26300,27084] },
             ntb:   { 'Portfolio Total':[32,33,33,34] }
@@ -131,6 +134,7 @@ const brandData = {
           kpis: {
             lift:  { 'Portfolio Total':[10,7,11,11,14,16,19,19,null,null,null] },
             cpum:  { 'Portfolio Total':[1.92,2.11,2.01,2.00,1.89,1.81,1.78,1.76,null,null,null] },
+            cpid:  { 'Portfolio Total':[0.36,0.40,0.38,0.38,0.36,0.34,0.34,0.33,null,null,null] },
             units: { 'Portfolio Total':[3800,12300,17600,17400,20500,21900,23500,24618,null,null,null] },
             spend: { 'Portfolio Total':[6200,20000,22800,21900,23800,24900,26300,27084,null,null,null] },
             ntb:   { 'Portfolio Total':[26,28,30,31,32,33,33,34,null,null,null] }
@@ -152,7 +156,7 @@ const brandData = {
           }
         },
         cpum: {
-          title:'CPUM by Day · Blended Cost Per Unit Moved',
+          title:'CPUM · Blended Cost Per Unit Moved',
           sub:'Weighted average across active campaigns · Lower is better · Category avg $2.31',
           yLabel: v => '$'+v.toFixed(2), yMin:1.2, yMax:2.8,
           tooltipFn: (ds,v) => v!==null ? ` ${ds}: $${v.toFixed(2)}` : null,
@@ -164,8 +168,21 @@ const brandData = {
             full:         {avg:'$1.91', peak:'Walmart · $1.52',   total:'−$0.35 vs. open'}
           }
         },
+        cpid: {
+          title:'CPID · Cost Per Incremental Dollar',
+          sub:'Incremental revenue generated per dollar spent · Lower is better · Category avg $0.44',
+          yLabel: v => '$'+v.toFixed(2), yMin:0.20, yMax:0.60,
+          tooltipFn: (ds,v) => v!==null ? ` ${ds}: $${v.toFixed(2)}` : null,
+          statLabels: ['Blended CPID','Best Retailer','Improvement Trend'],
+          stats: {
+            today:        {avg:'$0.33', peak:'Walmart · $0.29',   total:'−$0.07 since launch'},
+            '7d':         {avg:'$0.36', peak:'Walmart · $0.29',   total:'−$0.07 since launch'},
+            optimization: {avg:'$0.34', peak:'Walmart · $0.29',   total:'−$0.05 since Apr 8'},
+            full:         {avg:'$0.36', peak:'Walmart · $0.29',   total:'−$0.07 vs. open'}
+          }
+        },
         units: {
-          title:'Daily Units Moved · Liquid Death Portfolio',
+          title:'Units Moved · Liquid Death Portfolio',
           sub:'Incremental units across active campaigns · Excludes baseline sales',
           yLabel: v => v>=1000?(v/1000).toFixed(0)+'K':v, yMin:0, yMax:30000,
           tooltipFn: (ds,v) => v!==null ? ` ${ds}: ${v>=1000?(v/1000).toFixed(1)+'K':v} units` : null,
@@ -178,7 +195,7 @@ const brandData = {
           }
         },
         spend: {
-          title:'Daily Spend · Combined Budget Burn',
+          title:'Spend · Combined Budget Burn',
           sub:'Combined spend across active campaigns · $300K total budget',
           yLabel: v => '$'+(v/1000).toFixed(0)+'K', yMin:0, yMax:35000,
           tooltipFn: (ds,v) => v!==null ? ` ${ds}: $${(v/1000).toFixed(1)}K` : null,
@@ -208,23 +225,23 @@ const brandData = {
     campaigns:[
       { id:'IPN-4841', name:'LiveLift Q2 Pilot', status:'live', health:'Outperforming', healthClass:'healthy',
         startDate:'Apr 5', endDate:'May 20, 2026', daysLeft:'39 days left',
-        budget:'$180K', spent:'$94K', pacing:52, cpum:'$1.84', lift:'+19%' },
+        budget:'$180K', spent:'$94K', pacing:52, cpum:'$1.84', cpid:'$0.35', lift:'+19%' },
       { id:'IPN-4836', name:'Mountain Series Launch', status:'live', health:'Healthy', healthClass:'healthy',
         startDate:'Apr 1', endDate:'Apr 30, 2026', daysLeft:'19 days left',
-        budget:'$120K', spent:'$67K', pacing:56, cpum:'$1.67', lift:'+16%' },
+        budget:'$120K', spent:'$67K', pacing:56, cpum:'$1.67', cpid:'$0.32', lift:'+16%' },
       { id:'IPN-4962', name:'Summer Hydration Push', status:'draft', health:'Draft', healthClass:'setup',
         startDate:'Jun 1', endDate:'Jul 15, 2026', daysLeft:null,
-        budget:'$220K', spent:'—', pacing:0, cpum:'—', lift:'—' },
+        budget:'$220K', spent:'—', pacing:0, cpum:'—', cpid:'—', lift:'—' },
       { id:'IPN-4771', name:'Sparkling Water Regional Test', status:'ended', health:'Ended', healthClass:'setup',
         startDate:'Jan 20', endDate:'Feb 28, 2026', daysLeft:null,
-        budget:'$95K', spent:'$95K', pacing:100, cpum:'$1.62', lift:'+14%' },
+        budget:'$95K', spent:'$95K', pacing:100, cpum:'$1.62', cpid:'$0.31', lift:'+14%' },
       { id:'IPN-4688', name:'Holiday Pack Q4 2025', status:'ended', health:'Ended', healthClass:'setup',
         startDate:'Nov 15', endDate:'Dec 31, 2025', daysLeft:null,
-        budget:'$310K', spent:'$310K', pacing:100, cpum:'$1.94', lift:'+22%' }
+        budget:'$310K', spent:'$310K', pacing:100, cpum:'$1.94', cpid:'$0.37', lift:'+22%' }
     ]
   },
   'kimberly-clark': {
-    name:'Kimberly-Clark', initials:'KC', color:'#CC0052', am:'Jordan Mills',
+    name:'Kimberly-Clark', initials:'KC', color:'#CC0052', am:'Jordan Mills', ops:'Dana Torres',
     totalSpend:'$510K', avgCpum:'$2.31',
     chart: {
       labels: ['Feb 28','Mar 7','Mar 14','Mar 21','Mar 28','Apr 4','Apr 11'],
@@ -236,23 +253,23 @@ const brandData = {
     campaigns:[
       { id:'IPN-4773', name:'Kleenex Allergy Season', status:'live', health:'Ending Soon', healthClass:'attention',
         startDate:'Feb 28', endDate:'Apr 15, 2026', daysLeft:'4 days left',
-        budget:'$560K', spent:'$510K', pacing:91, cpum:'$2.31', lift:'+15%' },
+        budget:'$560K', spent:'$510K', pacing:91, cpum:'$2.31', cpid:'$0.44', lift:'+15%' },
       { id:'IPN-4698', name:'Cottonelle Spring Clean', status:'ended', health:'Ended', healthClass:'setup',
         startDate:'Jan 10', endDate:'Feb 27, 2026', daysLeft:null,
-        budget:'$195K', spent:'$195K', pacing:100, cpum:'$2.44', lift:'+12%' }
+        budget:'$195K', spent:'$195K', pacing:100, cpum:'$2.44', cpid:'$0.46', lift:'+12%' }
     ]
   },
   'hain-celestial': {
-    name:'Hain Celestial', initials:'HC', color:'#5B8E3E', am:'Jordan Mills',
+    name:'Hain Celestial', initials:'HC', color:'#5B8E3E', am:'Jordan Mills', ops:'Priya Nair',
     totalSpend:'$0', avgCpum:'—',
     chart: null,
     campaigns:[
       { id:'IPN-4881', name:'Natural Foods Discovery', status:'setup', health:'In Setup', healthClass:'setup',
         startDate:'Apr 21', endDate:'Jun 14, 2026', daysLeft:'Launches in 10 days',
-        budget:'$240K', spent:'$0', pacing:0, cpum:'—', lift:'—' },
+        budget:'$240K', spent:'$0', pacing:0, cpum:'—', cpid:'—', lift:'—' },
       { id:'IPN-4940', name:'Terra Chips Summer Push', status:'draft', health:'Draft', healthClass:'setup',
         startDate:'Jul 1', endDate:'Aug 31, 2026', daysLeft:null,
-        budget:'$160K', spent:'—', pacing:0, cpum:'—', lift:'—' }
+        budget:'$160K', spent:'—', pacing:0, cpum:'—', cpid:'—', lift:'—' }
     ]
   }
 };
@@ -273,8 +290,10 @@ function buildBrandKpiStrip(brand) {
     const units7d  = kpis7d.units['Portfolio Total'];
     const spend7d  = kpis7d.spend['Portfolio Total'];
 
+    const cpid7d   = kpis7d.cpid['Portfolio Total'];
     const avgLift  = (lift7d.reduce((s,v)=>s+(v||0),0)/lift7d.filter(v=>v!==null).length).toFixed(0);
     const avgCpum  = (cpum7d.reduce((s,v)=>s+(v||0),0)/cpum7d.filter(v=>v!==null).length).toFixed(2);
+    const avgCpid  = (cpid7d.reduce((s,v)=>s+(v||0),0)/cpid7d.filter(v=>v!==null).length).toFixed(2);
     const totalUnits = units7d.reduce((s,v)=>s+(v||0),0);
     const totalSpend = spend7d.reduce((s,v)=>s+(v||0),0);
 
@@ -299,7 +318,7 @@ function buildBrandKpiStrip(brand) {
     const unitsDisplay = totalUnits >= 1000 ? (totalUnits/1000).toFixed(0)+'K' : totalUnits;
 
     return `
-      <div class="kpi-strip" style="grid-template-columns:repeat(5,1fr);margin-bottom:20px;">
+      <div class="kpi-strip" style="grid-template-columns:repeat(6,1fr);margin-bottom:20px;">
         <div class="kpi-card">
           <div class="kpi-label">Incr. Lift (7D Avg)</div>
           <div class="kpi-value green">+${avgLift}%</div>
@@ -309,6 +328,11 @@ function buildBrandKpiStrip(brand) {
           <div class="kpi-label">Blended CPUM</div>
           <div class="kpi-value green">$${avgCpum}</div>
           <div class="kpi-delta pos">↓ −$0.35 since launch</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Blended CPID</div>
+          <div class="kpi-value green">$${avgCpid}</div>
+          <div class="kpi-delta pos">↓ −$0.07 since launch</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">Budget Pacing</div>
@@ -385,6 +409,10 @@ function showBrand(key) {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               AM: ${brand.am}
             </div>
+            ${brand.ops ? `<div class="hero-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Ops: ${brand.ops}
+            </div>` : ''}
             <div class="hero-pill" style="display:flex;align-items:center;gap:5px;">
               <span style="width:7px;height:7px;border-radius:50%;background:${statusDot};flex-shrink:0;${hasLive?'animation:pulse 2s infinite;':''}"></span>
               ${statusLabel}${draftCount ? ` · ${draftCount} draft` : ''}
@@ -465,12 +493,13 @@ function renderBrandChart(brand) {
   const kpiMeta = cd.kpiMeta[brandChartKPI];
   const rangeData = cd.ranges[brandChartRange];
 
-  // KPI selector pills (5 matching campaign page)
+  // KPI selector pills
   const kpis = [
     { key:'lift',  label:'Incremental Lift %' },
-    { key:'cpum',  label:'CPUM by Day' },
-    { key:'units', label:'Daily Units Moved' },
-    { key:'spend', label:'Daily Spend' },
+    { key:'cpum',  label:'CPUM' },
+    { key:'cpid',  label:'CPID' },
+    { key:'units', label:'Units Moved' },
+    { key:'spend', label:'Spend' },
     { key:'ntb',   label:'New-to-Brand %' },
   ];
   const kpiPillsHTML = kpis.map(k =>
@@ -543,7 +572,7 @@ function buildBrandChart(brand) {
   const rangeData = cd.ranges[effectiveRange];
   const kpiData = rangeData.kpis[brandChartKPI];
 
-  const kpiColors = { lift:'#40D1F5', cpum:'#ED2564', units:'#22C55E', spend:'#F59E0B', ntb:'#8B5CF6' };
+  const kpiColors = { lift:'#40D1F5', cpum:'#ED2564', cpid:'#F97316', units:'#22C55E', spend:'#F59E0B', ntb:'#8B5CF6' };
   const lineColor = kpiColors[brandChartKPI] || '#40D1F5';
 
   const datasets = [{
@@ -638,7 +667,7 @@ function applyBrandChartState() {
   });
 
   // Update chart — single Portfolio Total dataset, color varies by KPI
-  const kpiColors = { lift:'#40D1F5', cpum:'#ED2564', units:'#22C55E', spend:'#F59E0B', ntb:'#8B5CF6' };
+  const kpiColors = { lift:'#40D1F5', cpum:'#ED2564', cpid:'#F97316', units:'#22C55E', spend:'#F59E0B', ntb:'#8B5CF6' };
   const lineColor = kpiColors[brandChartKPI] || '#40D1F5';
   if (brandChart) {
     brandChart.data.labels = rangeData.labels;
@@ -768,10 +797,14 @@ function renderBrandCampaigns(campaigns) {
               ${isLive ? liveTag : ''}
             </div>
           </div>
-          <div class="metrics-row" style="grid-template-columns:repeat(3,1fr);margin-top:10px;">
+          <div class="metrics-row" style="grid-template-columns:repeat(4,1fr);margin-top:10px;">
             <div class="metric-item">
               <div class="metric-label">CPUM</div>
               <div class="metric-value" style="font-size:14px;color:${cpumColor};">${c.cpum}</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-label">CPID</div>
+              <div class="metric-value" style="font-size:14px;color:${c.cpid && c.cpid !== '—' ? cpumColor : '#9CA3AF'};">${c.cpid || '—'}</div>
             </div>
             <div class="metric-item">
               <div class="metric-label">Incr. Lift</div>
@@ -1129,7 +1162,7 @@ const kpiConfig = {
     statLabels: ['Avg Daily Lift', 'Peak', 'Projected End Lift']
   },
   cpum: {
-    title: 'CPUM by Day · Cost Per Unit Moved',
+    title: 'CPUM · Cost Per Unit Moved',
     sub: 'Blended across all active publishers · Lower is better',
     yLabel: val => '$' + val.toFixed(2),
     yMin: 1.0, yMax: 3.5,
@@ -1151,8 +1184,31 @@ const kpiConfig = {
     },
     statLabels: ['Avg CPUM', 'Highest Day', 'Projected End CPUM']
   },
+  cpid: {
+    title: 'CPID · Cost Per Incremental Dollar',
+    sub: 'Incremental revenue generated per dollar spent · Lower is better · Category avg $0.44',
+    yLabel: val => '$' + val.toFixed(2),
+    yMin: 0.20, yMax: 0.70,
+    showControl: false,
+    showProjected: true,
+    color: '#F97316',
+    fill: false,
+    datasets: {
+      full:         { exposed:[0.46,0.43,0.44,0.40,0.37,0.36,0.35,null,null,null,null], control:[], projected:[null,null,null,null,null,null,0.35,0.34,0.34,0.34,0.34] },
+      '7d':         { exposed:[0.46,0.43,0.44,0.40,0.37,0.36,0.35], control:[], projected:[] },
+      today:        { exposed:[0.36,0.36,0.35,0.35,0.35,0.35,0.35], control:[], projected:[] },
+      optimization: { exposed:[0.37,0.36,0.35], control:[], projected:[] }
+    },
+    stats: {
+      full:{ avg:'$0.35', peak:'Apr 5 · $0.46', proj:'$0.34 projected' },
+      '7d':{ avg:'$0.40', peak:'Apr 5 · $0.46', proj:'—' },
+      today:{ avg:'$0.35', peak:'8am · $0.36', proj:'—' },
+      optimization:{ avg:'$0.36', peak:'Apr 9 · $0.37', proj:'$0.34 projected' }
+    },
+    statLabels: ['Avg CPID', 'Highest Day', 'Projected End CPID']
+  },
   units: {
-    title: 'Daily Incremental Units Moved',
+    title: 'Incremental Units Moved',
     sub: 'Incremental units attributed to campaign · Excludes baseline purchases',
     yLabel: val => val >= 1000 ? (val/1000).toFixed(0)+'K' : val,
     yMin: 0, yMax: 20000,
@@ -1175,8 +1231,8 @@ const kpiConfig = {
     statLabels: ['Avg Daily Units', 'Peak Day', 'Projected Run Rate']
   },
   spend: {
-    title: 'Daily Spend vs. Pacing Target',
-    sub: 'Actual daily spend (bars) vs. ideal pacing trajectory · Budget: $180K total',
+    title: 'Spend vs. Pacing Target',
+    sub: 'Actual spend vs. ideal pacing trajectory · Budget: $180K total',
     yLabel: val => '$' + (val/1000).toFixed(0)+'K',
     yMin: 0, yMax: 25000,
     showControl: false,
@@ -1198,7 +1254,7 @@ const kpiConfig = {
     statLabels: ['Avg Daily Spend', 'Peak Day', 'Budget Status']
   },
   ntb: {
-    title: 'New-to-Brand Rate · Daily',
+    title: 'New-to-Brand Rate',
     sub: 'Share of buyers who had not purchased Liquid Death in prior 6 months',
     yLabel: val => val + '%',
     yMin: 0, yMax: 60,

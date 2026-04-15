@@ -9,7 +9,8 @@ A high-fidelity interactive prototype of a redesigned portal experience for Ibot
 
 **Built with:** HTML, CSS, JavaScript, Chart.js, and Claude Code (Anthropic's AI development tool). No frameworks, no build step — opens directly in a browser.
 
-**[→ View live prototype](https://zivgo-gh.github.io/ipn-campaign-intelligence/)**
+**[→ View live prototype](https://zivgo-gh.github.io/ipn-campaign-intelligence/)**  
+**[→ Watch walkthrough video](https://youtu.be/ofx14C4hypM)** (~5 min)
 
 ---
 
@@ -51,7 +52,7 @@ Both AMs and Ops see this same view. The suggested actions shown here — budget
 
 ### Screen 2 — Brand Detail (Liquid Death)
 
-A drill-down from the portfolio into a single brand's campaigns. Shows all campaigns for that brand, an aggregated performance chart with LiveLift data (Incremental Lift %, CPUM by Day, Units Moved, Daily Spend, New-to-Brand Rate), and AI-surfaced opportunities scoped to that brand.
+A drill-down from the portfolio into a single brand's campaigns. Shows all campaigns for that brand, an aggregated performance chart with LiveLift data (Incremental Lift %, CPUM, CPID, Units Moved, Spend, New-to-Brand Rate), and AI-surfaced opportunities scoped to that brand.
 
 > **Prototype scope note:** The brand and campaign detail screens are fully built out for Liquid Death and its LiveLift Q2 Pilot campaign only. Other brands on the portfolio are present as representative cards but do not drill through to populated detail screens.
 

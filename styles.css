@@ -171,6 +171,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; font-size: 14px; co
   background: var(--white); border-radius: 12px;
   border: 1px solid var(--gray-border);
   overflow: hidden; transition: box-shadow 0.2s; cursor: pointer;
+  display: flex; flex-direction: column;
 }
 .campaign-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
 .campaign-card.urgent { border-left: 3px solid var(--red); }
@@ -178,7 +179,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; font-size: 14px; co
 .campaign-card.healthy { border-left: 3px solid var(--green); }
 .campaign-card.setup { border-left: 3px solid var(--gray-border); }
 
-.card-top { padding: 16px 16px 12px; }
+.card-top { padding: 16px 16px 12px; flex: 1; }
 .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
 .brand-info { display: flex; align-items: center; gap: 10px; }
 .brand-avatar {

@@ -1830,28 +1830,6 @@
     </div>
   </div>
 
-  <!-- AI Recommendation Bar -->
-  <div class="ai-rec-bar">
-    <div class="ai-rec-icon">AI</div>
-    <div class="ai-rec-content">
-      <div class="ai-rec-label">AI Recommendation · Budget Optimization</div>
-      <div class="ai-rec-text">
-        Walmart CPUM (<strong>$1.42</strong>) is <strong>47% more efficient</strong> than Dollar General ($2.69) on this campaign.
-        Shifting <strong>$25K</strong> from Dollar General to Walmart is projected to improve blended CPUM from $1.84 → <strong>$1.51</strong>
-        and add ~<strong>14,200 incremental units</strong> over the remaining flight.
-        Based on 6 similar Liquid Death campaigns in the beverage category.
-      </div>
-      <div class="ai-rec-actions">
-        <button class="ai-rec-btn apply">Apply Recommendation</button>
-        <button class="ai-rec-btn dismiss">Dismiss</button>
-        <button class="ai-rec-btn confidence">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          87% confidence · Third-party validated
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- KPI Strip -->
   <div class="kpi-strip">
     <div class="kpi-card">
@@ -1883,6 +1861,28 @@
       <div class="kpi-label">Payback Period</div>
       <div class="kpi-value">22 days</div>
       <div class="kpi-delta pos">↓ 11 days vs target</div>
+    </div>
+  </div>
+
+  <!-- AI Recommendation Bar -->
+  <div class="ai-rec-bar">
+    <div class="ai-rec-icon">AI</div>
+    <div class="ai-rec-content">
+      <div class="ai-rec-label">AI Recommendation · Budget Optimization</div>
+      <div class="ai-rec-text">
+        Walmart CPUM (<strong>$1.42</strong>) is <strong>47% more efficient</strong> than Dollar General ($2.69) on this campaign.
+        Shifting <strong>$25K</strong> from Dollar General to Walmart is projected to improve blended CPUM from $1.84 → <strong>$1.51</strong>
+        and add ~<strong>14,200 incremental units</strong> over the remaining flight.
+        Based on 6 similar Liquid Death campaigns in the beverage category.
+      </div>
+      <div class="ai-rec-actions">
+        <button class="ai-rec-btn apply">Apply Recommendation</button>
+        <button class="ai-rec-btn dismiss">Dismiss</button>
+        <button class="ai-rec-btn confidence">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          87% confidence · Third-party validated
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1943,13 +1943,16 @@
               <div class="kpi-pill-dot"></div>Incremental Lift %
             </div>
             <div class="kpi-pill" onclick="setKPI('cpum', this)">
-              <div class="kpi-pill-dot"></div>CPUM by Day
+              <div class="kpi-pill-dot"></div>CPUM
+            </div>
+            <div class="kpi-pill" onclick="setKPI('cpid', this)">
+              <div class="kpi-pill-dot"></div>CPID
             </div>
             <div class="kpi-pill" onclick="setKPI('units', this)">
-              <div class="kpi-pill-dot"></div>Daily Units Moved
+              <div class="kpi-pill-dot"></div>Units Moved
             </div>
             <div class="kpi-pill" onclick="setKPI('spend', this)">
-              <div class="kpi-pill-dot"></div>Daily Spend
+              <div class="kpi-pill-dot"></div>Spend
             </div>
             <div class="kpi-pill" onclick="setKPI('ntb', this)">
               <div class="kpi-pill-dot"></div>New-to-Brand %
@@ -1999,7 +2002,7 @@
       <div class="chart-card">
         <div class="chart-card-header">
           <div>
-            <div class="chart-card-title">Retailer Performance Breakdown</div>
+            <div class="chart-card-title">Publisher Performance Breakdown</div>
             <div class="chart-card-sub" id="tableKpiSub">Sorted by CPUM · best to worst · Click column headers to re-sort</div>
           </div>
           <div style="display:flex;gap:8px;">
@@ -2020,7 +2023,7 @@
         <table class="retailer-table" id="retailerTable">
           <thead>
             <tr>
-              <th>Retailer</th>
+              <th>Publisher</th>
               <th id="th-cpum" class="sorted" data-col="cpum" onclick="sortTableByCol('cpum')">CPUM ↑</th>
               <th id="th-cpid" data-col="cpid" onclick="sortTableByCol('cpid')">CPID</th>
               <th id="th-lift" data-col="lift" onclick="sortTableByCol('lift')">Lift %</th>
@@ -2239,10 +2242,6 @@
           <div class="detail-row-value">All Liquid Death varieties · Min 1 unit</div>
         </div>
         <div class="detail-row">
-          <div class="detail-row-label">Targeting</div>
-          <div class="detail-row-value">Non-buyers last 6 months · Ages 21–45</div>
-        </div>
-        <div class="detail-row">
           <div class="detail-row-label">Active Publishers</div>
           <div class="detail-row-value">5 publishers · 3,000+ retail locations</div>
         </div>
@@ -2253,6 +2252,37 @@
         <div class="detail-row" style="margin-bottom:0;">
           <div class="detail-row-label">Account Manager</div>
           <div class="detail-row-value">Jordan Mills</div>
+        </div>
+      </div>
+
+      <!-- Targeting & Audience -->
+      <div class="detail-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--gray-border);">
+          <div class="detail-panel-title" style="margin:0;padding:0;border:none;">Targeting &amp; Audience</div>
+          <button style="font-size:11px;font-weight:600;color:#0369A1;background:none;border:none;cursor:pointer;padding:0;">Edit</button>
+        </div>
+
+        <!-- Audience Segments -->
+        <div style="margin-bottom:14px;">
+          <div style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Audience Segments</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span style="background:#F0FBFE;border:1px solid #40D1F5;color:#0369A1;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;">Non-buyers · last 6 months</span>
+            <span style="background:#F0FBFE;border:1px solid #40D1F5;color:#0369A1;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;">Competitive switchers</span>
+            <span style="background:#F0FBFE;border:1px solid #40D1F5;color:#0369A1;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;">Beverage category shoppers</span>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-row-label">Demographics</div>
+          <div class="detail-row-value">Ages 21–45</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-row-label">Geography</div>
+          <div class="detail-row-value">National · All US markets</div>
+        </div>
+        <div class="detail-row" style="margin-bottom:0;">
+          <div class="detail-row-label">Frequency Cap</div>
+          <div class="detail-row-value">1 redemption per household</div>
         </div>
       </div>
 
